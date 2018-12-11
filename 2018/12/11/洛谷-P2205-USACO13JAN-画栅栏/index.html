@@ -3,19 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Hello World | Taduro の blog</title>
+  <title>洛谷 P2205 [USACO13JAN]画栅栏 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+  <meta name="description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
+<meta name="keywords" content="离散化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/10/hello-world/index.html">
+<meta property="og:title" content="洛谷 P2205 [USACO13JAN]画栅栏">
+<meta property="og:url" content="http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+<meta property="og:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T05:06:18.334Z">
+<meta property="og:updated_time" content="2018-12-11T05:00:21.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+<meta name="twitter:title" content="洛谷 P2205 [USACO13JAN]画栅栏">
+<meta name="twitter:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -215,11 +216,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-洛谷-P2205-USACO13JAN-画栅栏" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/10/hello-world/" class="article-date">
-      <time datetime="2018-12-10T04:31:16.184Z" itemprop="datePublished">2018-12-10</time>
+      <a href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/" class="article-date">
+      <time datetime="2018-12-11T04:28:48.000Z" itemprop="datePublished">2018-12-11</time>
 </a>
     </div>
   
@@ -232,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      洛谷 P2205 [USACO13JAN]画栅栏
     </h1>
   
 
@@ -242,6 +243,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/离散化/">离散化</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -249,9 +254,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。</p>
-<p>About me<br>来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze</p>
-<p><a href="https://www.cnblogs.com/taduro/" target="_blank" rel="noopener">旧blog</a></p>
+        <p>这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。</p>
+<p> <strong>题目描述</strong> </p>
+<p>Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝一杯冰镇的凉水。（……-_-|||)  Bessie 经过的所有围墙都会被涂上一层颜料。Bessie从围墙上的位置0出发，并将会进行N次移动(1 &lt;= N &lt;=  100,000)。比如说，“10 L”的意思就是Bessie向左移动了10个单位。再比如说“15  R”的意思就是Bessie向右移动了15个单位。给出一系列Bessie移动的清单。FJ  想知道有多少块栅栏涂上了至少K层涂料。注意：Bessie最多会移动到离原点$1,000,000,000$单位远的地方。</p>
+<p><strong>输入输出格式</strong> </p>
+<p><strong>输入格式</strong>：</p>
+<p>第1行： 两个整数： N K</p>
+<p>第2…N+1 行： 每一行都描述了Bessie的一次移动。 （比如说 “15 L”）</p>
+<p><strong>输出格式</strong>：</p>
+<p> 一个整数：被至少涂上K层涂料的栅栏数</p>
+<p>好像一眼就能看出离散化，但我这个蒟蒻之前并没有太多的了解扫描线。</p>
+<p><strong>思路</strong>：离散化扫描。</p>
+<p>把一条线段的两个端点存下来，左边那个点的值是+1，右边是-1。之后按距离排序。</p>
+<p>然后开始扫描，每扫到一个点就加上它的值到sum里，如果有时候sum&gt;=k，那么ans加上这条线段的长度（这个一会儿看注释）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,v;</span><br><span class="line">&#125;w[<span class="number">400001</span>];</span><br><span class="line"><span class="keyword">char</span> c;</span><br><span class="line"><span class="keyword">int</span> n,l,i,k,ans,cnt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.x&lt;b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %c"</span>,&amp;x,&amp;c);</span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'R'</span>)&#123;</span><br><span class="line">            w[++cnt].x=l; w[cnt].v=<span class="number">1</span>;</span><br><span class="line">            w[++cnt].x=l+x; w[cnt].v=<span class="number">-1</span>;</span><br><span class="line">            l+=x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            w[++cnt].x=l; w[cnt].v=<span class="number">-1</span>;</span><br><span class="line">            w[++cnt].x=l-x; w[cnt].v=<span class="number">1</span>;</span><br><span class="line">            l-=x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(w+<span class="number">1</span>,w+cnt+<span class="number">1</span>,cmp);</span><br><span class="line">    l=w[<span class="number">1</span>].v;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">2</span>; i&lt;=cnt; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (l&gt;=k)&#123;</span><br><span class="line">            ans+=w[i].x-w[i<span class="number">-1</span>].x;<span class="comment">//就是这里，如果l&gt;=k那么一定是前面一段线段染色次数超过了k，所以我的顺序是这样的</span></span><br><span class="line">        &#125;</span><br><span class="line">        l+=w[i].v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -261,13 +277,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/10/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/">洛谷 P2205 [USACO13JAN]画栅栏</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月10日 - 12时31分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 13时06分</p>
+        <p><span>发布时间:</span>2018年12月11日 - 12时28分</p>
+        <p><span>最后更新:</span>2018年12月11日 - 13时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/10/hello-world/" title="Hello World">http://dftyem.github.io/2018/12/10/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/10/hello-world/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/" title="洛谷 P2205 [USACO13JAN]画栅栏">http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -280,15 +296,20 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/12/11/电脑班的裁员（区间DP）/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/11/洛谷-P3740-HAOI2014-贴海报/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          电脑班的裁员（区间DP）
+          洛谷 P3740 [HAOI2014]贴海报
         
       </div>
     </a>
   
+  
+    <a href="/2018/12/11/单调队列练习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">单调队列练习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -363,13 +384,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/11/电脑班的裁员（区间DP）/" title="上一篇: 电脑班的裁员（区间DP）">
+            <a href="/2018/12/11/洛谷-P3740-HAOI2014-贴海报/" title="上一篇: 洛谷 P3740 [HAOI2014]贴海报">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/12/11/单调队列练习/" title="下一篇: 单调队列练习">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/NOIP2018游记/">NOIP2018游记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/2-SAT学习笔记/">2-SAT学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷P4231-三步必杀/">洛谷P4231 三步必杀</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/线段树练习（也有树状数组）/">线段树练习（也有树状数组）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P3740-HAOI2014-贴海报/">洛谷 P3740 [HAOI2014]贴海报</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/">洛谷 P2205 [USACO13JAN]画栅栏</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/单调队列练习/">单调队列练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/">洛谷 P1736 创意吃鱼法（多维DP）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/电脑班的裁员（区间DP）/">电脑班的裁员（区间DP）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/10/hello-world/">Hello World</a></li></ul>
