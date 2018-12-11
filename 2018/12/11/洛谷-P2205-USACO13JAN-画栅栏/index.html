@@ -5,18 +5,18 @@
   
   <title>洛谷 P2205 [USACO13JAN]画栅栏 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
+  <meta name="description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。">
 <meta name="keywords" content="离散化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洛谷 P2205 [USACO13JAN]画栅栏">
 <meta property="og:url" content="http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
+<meta property="og:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T05:00:21.932Z">
+<meta property="og:updated_time" content="2018-12-11T10:18:06.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洛谷 P2205 [USACO13JAN]画栅栏">
-<meta name="twitter:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。  题目描述  Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝">
+<meta name="twitter:description" content="这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -255,6 +255,7 @@
       
           
         <p>这题其实没什么，但用到的算法都十分有用。做一个不恰当的比喻，这是一只必须用牛刀杀的鸡，但因为我这个蒟蒻杀不死牛，所以只能找只鸡来练练手。</p>
+<a id="more"></a>
 <p> <strong>题目描述</strong> </p>
 <p>Farmer  John  想出了一个给牛棚旁的长围墙涂色的好方法。（为了简单起见，我们把围墙看做一维的数轴，每一个单位长度代表一块栅栏）他只是简单的把刷子蘸满颜料，系在他最喜欢的奶牛Bessie上，然后让Bessie来回地经过围墙，自己则在一旁喝一杯冰镇的凉水。（……-_-|||)  Bessie 经过的所有围墙都会被涂上一层颜料。Bessie从围墙上的位置0出发，并将会进行N次移动(1 &lt;= N &lt;=  100,000)。比如说，“10 L”的意思就是Bessie向左移动了10个单位。再比如说“15  R”的意思就是Bessie向右移动了15个单位。给出一系列Bessie移动的清单。FJ  想知道有多少块栅栏涂上了至少K层涂料。注意：Bessie最多会移动到离原点$1,000,000,000$单位远的地方。</p>
 <p><strong>输入输出格式</strong> </p>
@@ -280,7 +281,7 @@
         <p><span>本文标题:</span><a href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/">洛谷 P2205 [USACO13JAN]画栅栏</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>2018年12月11日 - 12时28分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 13时00分</p>
+        <p><span>最后更新:</span>2018年12月11日 - 18时18分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/" title="洛谷 P2205 [USACO13JAN]画栅栏">http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

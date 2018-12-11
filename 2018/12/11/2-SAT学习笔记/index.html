@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="###$2-SAT$定义 $SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。而这个问题当">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T05:09:53.488Z">
+<meta property="og:updated_time" content="2018-12-11T10:17:51.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-SAT学习笔记">
 <meta name="twitter:description" content="###$2-SAT$定义 $SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。而这个问题当">
@@ -256,6 +256,7 @@
           
         <p>###$2-SAT$定义</p>
 <p>$SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。<br>例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。<br>而这个问题当一个括号里有多于2个元素时只能枚举，是NP问题。$2-SAT$就是括号里只有两个元素的情况。</p>
+<a id="more"></a>
 <p>###解法： 咕咕咕</p>
 <p>###注意事项：之前在理解的时候有很大一个难关就是不知道如何以及为什么要对表达式进行转化（我真菜）。<br>原因是这样：我们建的模型是$a$对$b$连一条边表示选了$a$必须选$b$，即$(a$ $and$ $b)$。<br>而大多数题目中很多要求的形式是$(a$ $or$ $b)$ $and$ $(!a$ $or$ $b)$<br>这时候就需要转化： $(a$ $or$ $b)=(a$ $and$ $!b)$ $or$ $(a$ $and$ $!b)$<br>我现在也不知道这个式子有什么道理，只是对着dalao们的模板推出来的这个式子，并且发现他是正确的。。。<br>所以我们连边的时候要从$a$到$b$的反连一条边，从$a$的反向$b​$连一条边。</p>
 
@@ -270,7 +271,7 @@
         <p><span>本文标题:</span><a href="/2018/12/11/2-SAT学习笔记/">2-SAT学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>2018年12月11日 - 13时09分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 13时09分</p>
+        <p><span>最后更新:</span>2018年12月11日 - 18时17分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/12/11/2-SAT学习笔记/" title="2-SAT学习笔记">http://dftyem.github.io/2018/12/11/2-SAT学习笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/2-SAT学习笔记/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
