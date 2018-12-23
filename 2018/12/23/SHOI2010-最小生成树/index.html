@@ -3,19 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>英语 | Taduro の blog</title>
+  <title>[SHOI2010]最小生成树 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+  <meta name="description" content="传送门 先说句闲话，好久没写题解了，主要是因为我的懒惰以及人类能鸽善鹉的本性。 但既然搭好了新blog，还是用一下吧，现在开始更新，不定时咕咕咕。">
+<meta name="keywords" content="网络流,生成树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英语">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/23/英语/index.html">
+<meta property="og:title" content="[SHOI2010]最小生成树">
+<meta property="og:url" content="http://dftyem.github.io/2018/12/23/SHOI2010-最小生成树/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+<meta property="og:description" content="传送门 先说句闲话，好久没写题解了，主要是因为我的懒惰以及人类能鸽善鹉的本性。 但既然搭好了新blog，还是用一下吧，现在开始更新，不定时咕咕咕。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T07:33:31.491Z">
+<meta property="og:updated_time" content="2018-12-23T09:06:15.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="英语">
-<meta name="twitter:description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+<meta name="twitter:title" content="[SHOI2010]最小生成树">
+<meta name="twitter:description" content="传送门 先说句闲话，好久没写题解了，主要是因为我的懒惰以及人类能鸽善鹉的本性。 但既然搭好了新blog，还是用一下吧，现在开始更新，不定时咕咕咕。">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -215,11 +216,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-英语" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-SHOI2010-最小生成树" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/23/英语/" class="article-date">
-      <time datetime="2018-12-23T07:26:20.000Z" itemprop="datePublished">2018-12-23</time>
+      <a href="/2018/12/23/SHOI2010-最小生成树/" class="article-date">
+      <time datetime="2018-12-23T08:14:28.000Z" itemprop="datePublished">2018-12-23</time>
 </a>
     </div>
   
@@ -232,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      英语
+      [SHOI2010]最小生成树
     </h1>
   
 
@@ -242,6 +243,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生成树/">生成树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -249,8 +254,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>我英语放什么歌好呢？</p>
-<p>A  $Alan Walker$     B 二刺猿         C 咕咕咕 </p>
+        <p><a href="https://www.luogu.org/problemnew/show/P5039" target="_blank" rel="noopener">传送门</a></p>
+<p>先说句闲话，好久没写题解了，主要是因为我的懒惰以及人类能鸽善鹉的本性。</p>
+<p>但既然搭好了新blog，还是用一下吧，现在开始更新，不定时咕咕咕。</p>
+<a id="more"></a>
+<h2 id="正题："><a href="#正题：" class="headerlink" title="正题："></a>正题：</h2><h3 id="题意简述："><a href="#题意简述：" class="headerlink" title="题意简述："></a>题意简述：</h3><p>​    给你一个无向图，你可以将除了你指定的一条边外的所有权值减一，每次代价为一。求对于指定的一条边，要花费多少代价使它一定成为最小生成树中的一条边。图的点数小于$500$，边数小于$800$。</p>
+<h3 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h3><p>​    首先，将一个边以外的边全都减一，就相当于把它加一。</p>
+<p>​    第二，从$kruscal$ 的性质上考虑，如果一条边一定在最小生成树里，那么它所连接的两个点之间一定没有一条所包含的所有边都比它小的路径。因为最小生成树中不存在环，如果有环，那就要将环上最长的那条边删去。所以我们只要找到这种路径，将路径上最长的边加到比我们想要的边长，直到整个图中不存在这种路径即可。</p>
+<p>​    这样，我们规定的这条边就没有一种方案被其他边替代了。</p>
+<h3 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h3><p>​    建立网络流模型，将图中所有边权不大于指定边权的边拿出来重新建图，边权改为与指定边权的差值加一，题目要求的边的两个端点分别为源点和汇点。那么我们上面所说的一条路径就是这个图中的一个流，目标状态是这个图中不存在流，跑一边最小割即可。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line"><span class="keyword">char</span> ss[<span class="number">1</span>&lt;&lt;<span class="number">17</span>],*A=ss,*B=ss;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">gc</span><span class="params">()</span></span>&#123;<span class="keyword">if</span>(A==B)&#123;B=(A=ss)+fread(ss,<span class="number">1</span>,<span class="number">1</span>&lt;&lt;<span class="number">17</span>,<span class="built_in">stdin</span>);<span class="keyword">if</span>(A==B)<span class="keyword">return</span> EOF;&#125;<span class="keyword">return</span>*A++;&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;<span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span>&amp;<span class="title">x</span>)&#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">char</span> c;<span class="keyword">static</span> <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">for</span>(c=gc(),x=<span class="number">0</span>,y=<span class="number">1</span>;c&lt;<span class="number">48</span>||<span class="number">57</span>&lt;c;c=gc())<span class="keyword">if</span>(c==<span class="string">'-'</span>)y=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="number">48</span>&lt;=c&amp;&amp;c&lt;=<span class="number">57</span>;c=gc())x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(c^<span class="string">'0'</span>);</span><br><span class="line">    x*=y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span>&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> next,to,z;</span><br><span class="line">&#125;w[<span class="number">5001</span>];</span><br><span class="line"><span class="keyword">int</span> head[<span class="number">2001</span>],cnt,deep[<span class="number">2001</span>],ans,n,m,z,c,a,b;</span><br><span class="line"><span class="keyword">int</span> o[<span class="number">2001</span>],tim,heap,tail,team[<span class="number">2001</span>],cur[<span class="number">2001</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">2001</span>],t[<span class="number">2001</span>],l[<span class="number">2001</span>],q;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">	w[cnt].next=head[x];</span><br><span class="line">	w[cnt].to=y; w[cnt].z=z;</span><br><span class="line">	head[x]=cnt; cnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) cur[i]=head[i];</span><br><span class="line">	heap=tail=<span class="number">1</span>; tim++; deep[a]=<span class="number">1</span>;</span><br><span class="line">	team[tail]=a; o[a]=tim;</span><br><span class="line">	<span class="keyword">while</span> (heap&lt;=tail)&#123;</span><br><span class="line">		<span class="keyword">int</span> k=team[heap];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=head[k]; i!=<span class="number">-1</span>; i=w[i].next)&#123;</span><br><span class="line">			<span class="keyword">if</span> (o[w[i].to]!=tim&amp;&amp;w[i].z)&#123;</span><br><span class="line">				deep[w[i].to]=deep[k]+<span class="number">1</span>;</span><br><span class="line">				o[w[i].to]=tim;</span><br><span class="line">				team[++tail]=w[i].to;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		heap++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (o[b]==tim);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x==b||v==<span class="number">0</span>) <span class="keyword">return</span> v;</span><br><span class="line">	<span class="keyword">int</span> used=<span class="number">0</span>,minn,z;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> &amp;i=cur[x]; i!=<span class="number">-1</span>; i=w[i].next)&#123;</span><br><span class="line">		<span class="keyword">if</span> (w[i].z&amp;&amp;deep[w[i].to]==deep[x]+<span class="number">1</span>)&#123;</span><br><span class="line">			minn=min(v-used,w[i].z);</span><br><span class="line">			z=dfs(w[i].to,minn);</span><br><span class="line">			<span class="keyword">if</span> (z)&#123;</span><br><span class="line">				w[i].z-=z; w[i^<span class="number">1</span>].z+=z;</span><br><span class="line">				used+=z;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (used==v) <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!used) deep[x]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> used;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,y,z;</span><br><span class="line">	read(n),read(m),read(q);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		read(x),read(y),read(z);</span><br><span class="line">		f[i]=x; t[i]=y; l[i]=z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	a=f[q]; b=t[q]; c=l[q];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span> (i==q) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">if</span> (l[i]&lt;=c)&#123;</span><br><span class="line">			add(f[i],t[i],c-l[i]+<span class="number">1</span>);</span><br><span class="line"><span class="comment">//			printf("%d %d %d\n",f[i],t[i],c-l[i]+1);</span></span><br><span class="line">			add(t[i],f[i],<span class="number">0</span>);</span><br><span class="line">			add(t[i],f[i],c-l[i]+<span class="number">1</span>);</span><br><span class="line">			add(f[i],t[i],<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (bfs())</span><br><span class="line">		ans+=dfs(a,<span class="number">1e9</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -260,13 +273,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/23/英语/">英语</a></p>
+        <p><span>本文标题:</span><a href="/2018/12/23/SHOI2010-最小生成树/">[SHOI2010]最小生成树</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月23日 - 15时26分</p>
-        <p><span>最后更新:</span>2018年12月23日 - 15时33分</p>
+        <p><span>发布时间:</span>2018年12月23日 - 16时14分</p>
+        <p><span>最后更新:</span>2018年12月23日 - 17时06分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/23/英语/" title="英语">http://dftyem.github.io/2018/12/23/英语/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/23/英语/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/23/SHOI2010-最小生成树/" title="[SHOI2010]最小生成树">http://dftyem.github.io/2018/12/23/SHOI2010-最小生成树/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/23/SHOI2010-最小生成树/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -279,18 +292,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/12/23/SHOI2010-最小生成树/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [SHOI2010]最小生成树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/11/NOIP2018游记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NOIP2018游记</div>
+    <a href="/2018/12/23/英语/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">英语</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -301,7 +305,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正题："><span class="toc-number">1.</span> <span class="toc-text">正题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意简述："><span class="toc-number">1.1.</span> <span class="toc-text">题意简述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做法："><span class="toc-number">1.2.</span> <span class="toc-text">做法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现："><span class="toc-number">1.3.</span> <span class="toc-text">实现：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">1.4.</span> <span class="toc-text">代码：</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -367,13 +371,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/23/SHOI2010-最小生成树/" title="上一篇: [SHOI2010]最小生成树">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/12/11/NOIP2018游记/" title="下一篇: NOIP2018游记">
+            <a href="/2018/12/23/英语/" title="下一篇: 英语">
                 <i class="fa fa-angle-right"></i>
             </a>
         
