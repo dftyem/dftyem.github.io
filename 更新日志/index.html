@@ -3,20 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>2-SAT学习笔记 | Taduro の blog</title>
+  <title>ioiaki | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2-SAT定义$SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。而这个问题当一个括号里有">
-<meta name="keywords" content="学习笔记,2-SAT">
-<meta property="og:type" content="article">
-<meta property="og:title" content="2-SAT学习笔记">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/11/2-SAT学习笔记/index.html">
+  <meta name="description" content="这是一篇更新日志。 在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。  2018-12-10      在$zjf$的帮助下，$blog$建成。 2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。 2018-12-23    决定正式开始使用$blog$ 2018-12-26    开始写这篇更新日志。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ioiaki">
+<meta property="og:url" content="http://dftyem.github.io/更新日志/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="2-SAT定义$SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。而这个问题当一个括号里有">
+<meta property="og:description" content="这是一篇更新日志。 在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。  2018-12-10      在$zjf$的帮助下，$blog$建成。 2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。 2018-12-23    决定正式开始使用$blog$ 2018-12-26    开始写这篇更新日志。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-26T08:53:32.067Z">
+<meta property="og:updated_time" content="2018-12-26T08:51:33.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2-SAT学习笔记">
-<meta name="twitter:description" content="2-SAT定义$SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。而这个问题当一个括号里有">
+<meta name="twitter:title" content="ioiaki">
+<meta name="twitter:description" content="这是一篇更新日志。 在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。  2018-12-10      在$zjf$的帮助下，$blog$建成。 2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。 2018-12-23    决定正式开始使用$blog$ 2018-12-26    开始写这篇更新日志。">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -42,7 +41,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
+          isPost: false,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -216,11 +215,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-2-SAT学习笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/11/2-SAT学习笔记/" class="article-date">
-      <time datetime="2018-12-11T05:09:14.000Z" itemprop="datePublished">2018-12-11</time>
+      <a href="/更新日志/index.html" class="article-date">
+      <time datetime="2018-12-26T08:37:19.000Z" itemprop="datePublished">2018-12-26</time>
 </a>
     </div>
   
@@ -233,7 +232,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      2-SAT学习笔记
+      ioiaki
     </h1>
   
 
@@ -243,10 +242,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2-SAT/">2-SAT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -254,11 +249,49 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="2-SAT定义"><a href="#2-SAT定义" class="headerlink" title="2-SAT定义"></a>2-SAT定义</h2><p>$SAT$是$Satisfiability$的缩写，意为可满足性。即一串布尔变量，每个变量只能为真或假。要求对这些变量进行赋值，满足布尔方程。<br>例如$($$a$ $or$ $b$$)$$and$$($$a$ $or$ $!c$$)$$and$$($$a$ $and$ $c$ $or$ $b$$)$，求解这个问题就是让你找出一组a,b,c的取值使得这个表达式为真。<br>而这个问题当一个括号里有多于2个元素时只能枚举，是NP问题。$2-SAT$就是括号里只有两个元素的情况。</p>
-<a id="more"></a>
-<h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><p>​    咕咕咕….</p>
-<h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h3><p>​    之前在理解的时候有很大一个难关就是不知道如何以及为什么要对表达式进行转化（我真菜）。</p>
-<p>​    原因是这样：我们建的模型是$a$对$b$连一条边表示选了$a$必须选$b$，即$(a$  $and$  $b)$。<br>​    而大多数题目中很多要求的形式是$(a$ $or$ $b)$ $and$ $(!a$ $or$ $b)$<br>​    这时候就需要转化： $(a$ $or$ $b)=(a$ $and$ $!b)$ $or$ $(a$ $and$ $!b)$<br>​    我现在也不知道这个式子有什么道理，只是对着dalao们的模板推出来的这个式子，并且发现他是正确的。。。<br>​    所以我们连边的时候要从$a$到$b$的反连一条边，从$a$的反向$b​$连一条边。</p>
+              <style>
+    .article-meta {
+        display: none;
+    }
+    #container .article .article-title {
+        padding-right: 0;
+    }
+    .article-header {
+        padding: 0;
+        padding-top: 26px;
+        border-left: none;
+        text-align: center;
+    }
+    .article-header:hover {
+        border-left: none;
+    }
+    .article-title {
+        font-size: 1.6em
+    }
+    .article-meta {
+        display: none;
+    }
+    .article-entry hr {
+        margin: 0;
+    }
+    #container .article-info-post.article-info {
+      display: none;
+      }
+    #container .article .article-title {
+    padding: 0;
+    }
+</style>
+
+
+          
+        <p>这是一篇更新日志。</p>
+<p>在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。</p>
+<ul>
+<li>2018-12-10      在$zjf$的帮助下，$blog$建成。</li>
+<li>2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。</li>
+<li>2018-12-23    决定正式开始使用$blog$</li>
+<li>2018-12-26    开始写这篇更新日志。</li>
+</ul>
 
       
       
@@ -267,76 +300,10 @@
   </div>
   
     
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/11/2-SAT学习笔记/">2-SAT学习笔记</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月11日 - 13时09分</p>
-        <p><span>最后更新:</span>2018年12月26日 - 16时53分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/11/2-SAT学习笔记/" title="2-SAT学习笔记">http://dftyem.github.io/2018/12/11/2-SAT学习笔记/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/2-SAT学习笔记/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
-
-
-<nav id="article-nav">
-  
-    <a href="/2018/12/11/NOIP2018游记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          NOIP2018游记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/12/11/洛谷P4231-三步必杀/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">洛谷P4231 三步必杀</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
 
   
 </article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-SAT定义"><span class="toc-number">1.</span> <span class="toc-text">2-SAT定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解法："><span class="toc-number">1.1.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项："><span class="toc-number">1.2.</span> <span class="toc-text">注意事项：</span></a></li></ol></li></ol>
-</div>
-<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
-
-
 
 
 
@@ -372,39 +339,6 @@
     
 
 
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/12/11/NOIP2018游记/" title="上一篇: NOIP2018游记">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/2018/12/11/洛谷P4231-三步必杀/" title="下一篇: 洛谷P4231 三步必杀">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/12/25/POI2013-USU-Take-out-题解/">[POI2013]USU-Take-out 题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/23/SHOI2010-最小生成树/">[SHOI2010]最小生成树</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/23/英语/">英语</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/NOIP2018游记/">NOIP2018游记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/2-SAT学习笔记/">2-SAT学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷P4231-三步必杀/">洛谷P4231 三步必杀</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/线段树练习（也有树状数组）/">线段树练习（也有树状数组）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P3740-HAOI2014-贴海报/">洛谷 P3740 [HAOI2014]贴海报</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P2205-USACO13JAN-画栅栏/">洛谷 P2205 [USACO13JAN]画栅栏</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/单调队列练习/">单调队列练习</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/">洛谷 P1736 创意吃鱼法（多维DP）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/11/电脑班的裁员（区间DP）/">电脑班的裁员（区间DP）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/10/hello-world/">Hello World</a></li></ul>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
 
 
 
