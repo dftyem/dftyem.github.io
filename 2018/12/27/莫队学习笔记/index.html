@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>洛谷 P1736 创意吃鱼法（多维DP） | Taduro の blog</title>
+  <title>莫队学习笔记 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述回到家中的猫猫把三桶鱼全部转移到了她那长方形大池子中，然后开始思考：到底要以何种方法吃鱼呢（猫猫就是这么可爱，吃鱼也要想好吃法 ^_*）。她发现，把大池子视为01矩阵（0表示对应位置无鱼，1表示对应位置有鱼）有助于决定吃鱼策略。 在代表池子的01矩阵中，有很多的正方形子矩阵，如果某个正方形子矩阵的某条对角线上都有鱼，且此正方形子矩阵的其他地方无鱼，猫猫就可以从这个正方形子矩阵“对角线的一端">
-<meta name="keywords" content="DP,luogu">
+  <meta name="description" content="什么都没学会。">
+<meta name="keywords" content="学习笔记,莫队">
 <meta property="og:type" content="article">
-<meta property="og:title" content="洛谷 P1736 创意吃鱼法（多维DP）">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/index.html">
+<meta property="og:title" content="莫队学习笔记">
+<meta property="og:url" content="http://dftyem.github.io/2018/12/27/莫队学习笔记/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="题目描述回到家中的猫猫把三桶鱼全部转移到了她那长方形大池子中，然后开始思考：到底要以何种方法吃鱼呢（猫猫就是这么可爱，吃鱼也要想好吃法 ^_*）。她发现，把大池子视为01矩阵（0表示对应位置无鱼，1表示对应位置有鱼）有助于决定吃鱼策略。 在代表池子的01矩阵中，有很多的正方形子矩阵，如果某个正方形子矩阵的某条对角线上都有鱼，且此正方形子矩阵的其他地方无鱼，猫猫就可以从这个正方形子矩阵“对角线的一端">
+<meta property="og:description" content="什么都没学会。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T10:17:25.512Z">
+<meta property="og:updated_time" content="2018-12-27T11:03:12.008Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="洛谷 P1736 创意吃鱼法（多维DP）">
-<meta name="twitter:description" content="题目描述回到家中的猫猫把三桶鱼全部转移到了她那长方形大池子中，然后开始思考：到底要以何种方法吃鱼呢（猫猫就是这么可爱，吃鱼也要想好吃法 ^_*）。她发现，把大池子视为01矩阵（0表示对应位置无鱼，1表示对应位置有鱼）有助于决定吃鱼策略。 在代表池子的01矩阵中，有很多的正方形子矩阵，如果某个正方形子矩阵的某条对角线上都有鱼，且此正方形子矩阵的其他地方无鱼，猫猫就可以从这个正方形子矩阵“对角线的一端">
+<meta name="twitter:title" content="莫队学习笔记">
+<meta name="twitter:description" content="什么都没学会。">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -220,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-洛谷-P1736-创意吃鱼法（多维DP）" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-莫队学习笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/" class="article-date">
-      <time datetime="2018-12-11T02:56:10.000Z" itemprop="datePublished">2018-12-11</time>
+      <a href="/2018/12/27/莫队学习笔记/" class="article-date">
+      <time datetime="2018-12-27T03:23:45.000Z" itemprop="datePublished">2018-12-27</time>
 </a>
     </div>
   
@@ -237,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      洛谷 P1736 创意吃鱼法（多维DP）
+      莫队学习笔记
     </h1>
   
 
@@ -248,7 +248,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/luogu/">luogu</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/莫队/">莫队</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -258,39 +258,24 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>回到家中的猫猫把三桶鱼全部转移到了她那长方形大池子中，然后开始思考：到底要以何种方法吃鱼呢（猫猫就是这么可爱，吃鱼也要想好吃法 ^_*）。她发现，把大池子视为01矩阵（0表示对应位置无鱼，1表示对应位置有鱼）有助于决定吃鱼策略。</p>
-<p>在代表池子的01矩阵中，有很多的正方形子矩阵，如果某个正方形子矩阵的某条对角线上都有鱼，且此正方形子矩阵的其他地方无鱼，猫猫就可以从这个正方形子矩阵“对角线的一端”下口，只一吸，就能把对角线上的那一队鲜鱼吸入口中。</p>
-<p>猫猫是个贪婪的家伙，所以她想一口吃掉尽量多的鱼。请你帮猫猫计算一下，她一口下去，最多可以吃掉多少条鱼？</p>
+        <p>什么都没学会。</p>
 <a id="more"></a>
-<h3 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h3><p>输入格式：</p>
-<p>有多组输入数据，每组数据：</p>
-<p>第一行有两个整数$n$和$m（n,m≥1）$，描述池塘规模。接下来的$n$行，每行有$m$个数字（非“0”即“1”）。每两个数字之间用空格隔开。</p>
-<p>对于30%的数据，有$n,m≤100$</p>
-<p>对于60%的数据，有$n,m≤1000$</p>
-<p>对于100%的数据，有$n,m≤2500$</p>
-<p>输出格式：</p>
-<p>只有一个整数——猫猫一口下去可以吃掉的鱼的数量，占一行，行末有回车。</p>
-<p>——————————————–我是分割线————————————————</p>
-<p>这题我用的是$N^2logN$的二分，还挺好写的，效率也很可观。</p>
-<p>进入正题：</p>
-<p>首先要对角线要分成两种，一种是/这样的，一种是\这样的（灵魂题解~~），这是两个相似的问题，我们可以先解决一个，然后把代码复制一下（嘿嘿嘿）。</p>
-<p>我们来看一下\这样的对角线，式子很明显：</p>
-<p>$f[i][j]$表示以$(i,j)$为终点的对角线长度，因此这里一定有要鱼</p>
-<p>如果矩阵$(i-x,j-x,i,j)$是满足题目要求的，那么$f[i][j]=max(f[i][j],x)$。</p>
-<p>同时我们发现，1.x越大越好。2.x的上界是$f[i-1][j-1]$,因为超过这个一定不满足要求。3.如果x不满足要求，那么x到其上界就都不满足。</p>
-<p>似乎满足单调性？</p>
-<p>那么我们可以二分x。</p>
-<p>之后我们再来看满足题目要求的矩阵</p>
-<p>举个例子：</p>
-<p>1 0 0 0</p>
-<p>0 1 0 1</p>
-<p>0 0 1 0</p>
-<p>0 0 0 1</p>
-<p>当i=4,j=4时，由于我们之前算出来$f[3][3]$是三，那么矩阵$（1,1,3,3）$一定是符合要求的，所以我们只需要判断第i行1到j个元素与第j行1到i个元素有没有鱼就可以了。</p>
-<p>但如果暴力算的话会T，我们可以算矩阵$（i-x,j-x,i,j）$的和是不是$x+1$。于是就可以用到我们的二维前缀和了。</p>
-<p>贴一下代码：</p>
- <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">2501</span>][<span class="number">2501</span>],s[<span class="number">2501</span>][<span class="number">2501</span>],i;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2501</span>][<span class="number">2501</span>],n,m,l,r,mid,ans,j;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,p=<span class="number">1</span>; <span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span>||ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) p=<span class="number">-1</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) &#123;x=(x&lt;&lt;<span class="number">1</span>)+(x&lt;&lt;<span class="number">3</span>)+ch-<span class="string">'0'</span>; ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read(); m=read();</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">            a[i][j]=read();</span><br><span class="line">            s[i][j]=s[i<span class="number">-1</span>][j]+s[i][j<span class="number">-1</span>]-s[i<span class="number">-1</span>][j<span class="number">-1</span>]+a[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        <span class="keyword">for</span> (j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i][j])&#123;</span><br><span class="line">              f[i][j]=<span class="number">1</span>;</span><br><span class="line">              <span class="keyword">if</span> (f[i<span class="number">-1</span>][j<span class="number">-1</span>])&#123;</span><br><span class="line">                l=<span class="number">0</span>; r=f[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                <span class="keyword">while</span> (l&lt;=r)&#123;</span><br><span class="line">                    mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span> (s[i][j]-s[i-mid<span class="number">-1</span>][j]-s[i][j-mid<span class="number">-1</span>]+s[i-mid<span class="number">-1</span>][j-mid<span class="number">-1</span>]==mid+<span class="number">1</span>)</span><br><span class="line">                       l=mid+<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                f[i][j]=max(f[i][j],l);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans=max(ans,f[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span>(f));</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">        <span class="keyword">for</span> (j=m; j&gt;=<span class="number">1</span>; j--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i][j])&#123;</span><br><span class="line">                f[i][j]=<span class="number">1</span>;</span><br><span class="line">                l=<span class="number">0</span>; r=f[i<span class="number">-1</span>][j+<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">while</span> (l&lt;=r)&#123;</span><br><span class="line">                    mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span> (s[i][j+mid]-s[i][j<span class="number">-1</span>]-s[i-mid<span class="number">-1</span>][j+mid]+s[i-mid<span class="number">-1</span>][j<span class="number">-1</span>]==mid+<span class="number">1</span>)</span><br><span class="line">                       l=mid+<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                f[i][j]=max(f[i][j],l);</span><br><span class="line">            &#125;</span><br><span class="line">            ans=max(ans,f[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>莫队是一个离线解决区间问题的重要算法，包括普通莫队，带修莫队，树上莫队。主要应用于没有加和性质但可以由区间$[l,r-1]$的答案轻松推出区间$[l,r]$的答案的问题。是由某年国家队队长莫涛发明的。</p>
+<p>强烈安利莫队神仙教学：<a href="https://www.cnblogs.com/Paul-Guderian/p/6933799.html" target="_blank" rel="noopener">大米饼的blog</a></p>
+<h2 id="普通莫队"><a href="#普通莫队" class="headerlink" title="普通莫队"></a>普通莫队</h2><p>全网都在用的例题： <a href="https://www.luogu.org/problemnew/show/P1494" target="_blank" rel="noopener">Z爷的袜子</a></p>
+<p>很显然，一个区间$[l,r]$的答案为$ans$的话。</p>
+<p>$$<br>ans={\frac{\sum_{i=1}^{M}{sum[i]\times(sum[i]-1)}}{(r-l+1)\times(r-l)}}<br>$$</p>
+<p>$M$ 表示颜色个数，$sum[i]$ 表示 $[l,r]$ 中颜色 $i$ 的个数。</p>
+<p>显而易见的是，如果我们知道区间$[l,r-1]$的答案是$ans1$，要求区间$[l,r]$的答案$ans$的话。<br>$$<br>ans=ans1-(sum[a[r]-1])^2 +sum[a[r]]^2<br>$$<br>$a[r]$表示第$r$个袜子的颜色。这个式子可以继续展开，不过这里并不需要。</p>
+<p>这样我们就可以将$l$和$r$两个指针反复移动来得到答案。</p>
+<p>显然这个做法效率低下，这是莫队上场了，我们将序列分块。对所有询问进行双关键字排序，如果$l$在同块，就按$r$排序，否则按$l$排序，之后一个一个询问不断移动指针求解。</p>
+<h3 id="时间复杂度分析："><a href="#时间复杂度分析：" class="headerlink" title="时间复杂度分析："></a>时间复杂度分析：</h3><p>设块的大小为$blo$，考虑最坏情况。</p>
+<p>先看$l$，在一个块的询问中，$l$最多从前一个块最后一个询问（位于前一个块头）到本块第一个询问（位于本块块尾）再回到本块最后一个询问（位于本块块头）。这样每个点最多要移动 $3\times blo$次，一共是$3\times n\times blo$ 次 。</p>
+<p>再看$r$，在一个块的询问中，$r$最多从前一个快最后一个询问（在$n$）到本块第一个询问（在本块块头）到本块最后一个询问（在$n$）。要移动 $2\times n$次，一共是 $\frac{2\times n^2}{blo}$ 次。</p>
+<p>这样我们发现，莫队的最坏复杂度是 $O(3\times n\times blo+\frac{2\times n^2}{blo})$ ，就是 $O(n\times blo+\frac{n^2}{blo})$，根据均值不等式得， $ blo=\sqrt{n}$时最优。</p>
+<h3 id="普通分块板子："><a href="#普通分块板子：" class="headerlink" title="普通分块板子："></a>普通分块板子：</h3><p><del>由于蜜汁爆范围，我全开了long long</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	ll l,r,h;</span><br><span class="line">&#125;q[<span class="number">50001</span>];</span><br><span class="line">ll a[<span class="number">50001</span>],l,r,m;</span><br><span class="line">ll bl[<span class="number">50001</span>],blo,n;</span><br><span class="line">ll sum[<span class="number">50001</span>],num[<span class="number">50001</span>],fm[<span class="number">50001</span>],ans;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;<span class="keyword">return</span> !b?a:gcd(b,a%b);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node c,node d)</span></span>&#123;<span class="keyword">return</span> bl[c.l]==bl[d.l]?c.r&lt;d.r:c.l&lt;d.l;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(ll x,ll y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (y&lt;<span class="number">0</span>)&#123;</span><br><span class="line">		ans-=sum[a[x]]*(sum[a[x]]<span class="number">-1</span>);</span><br><span class="line">		ans+=(sum[a[x]]<span class="number">-1</span>)*(sum[a[x]]<span class="number">-2</span>);</span><br><span class="line">		sum[a[x]]--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		ans-=sum[a[x]]*(sum[a[x]]<span class="number">-1</span>);</span><br><span class="line">		ans+=(sum[a[x]]+<span class="number">1</span>)*sum[a[x]];</span><br><span class="line">		sum[a[x]]++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;n,&amp;m); blo=<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">		bl[i]=(i<span class="number">-1</span>)/blo+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;q[i].l,&amp;q[i].r);</span><br><span class="line">		q[i].h=i;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(q+<span class="number">1</span>,q+m+<span class="number">1</span>,cmp);</span><br><span class="line">	l=q[<span class="number">1</span>].l; r=l; <span class="keyword">while</span> (r&lt;=q[<span class="number">1</span>].r) add(r,<span class="number">1</span>),r++;</span><br><span class="line">	r--; fm[q[<span class="number">1</span>].h]=(q[<span class="number">1</span>].r-l+<span class="number">1</span>)*(q[<span class="number">1</span>].r-l); <span class="keyword">if</span> (!ans) fm[q[<span class="number">1</span>].h]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span>&#123;ll g=gcd(ans,fm[q[<span class="number">1</span>].h]);num[q[<span class="number">1</span>].h]=ans/g; fm[q[<span class="number">1</span>].h]/=g;&#125;</span><br><span class="line">	<span class="keyword">for</span> (ll i=<span class="number">2</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="keyword">while</span> (l&lt;q[i].l) add(l,<span class="number">-1</span>),l++;</span><br><span class="line">		<span class="keyword">while</span> (l&gt;q[i].l) l--,add(l,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">while</span> (r&lt;q[i].r) r++,add(r,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">while</span> (r&gt;q[i].r) add(r,<span class="number">-1</span>),r--;</span><br><span class="line">		<span class="keyword">if</span> (!ans)&#123;fm[q[i].h]=<span class="number">1</span>;<span class="keyword">continue</span>;&#125;</span><br><span class="line">		fm[q[i].h]=(q[i].r-q[i].l+<span class="number">1</span>)*(q[i].r-q[i].l);</span><br><span class="line">		ll g=gcd(ans,fm[q[i].h]);</span><br><span class="line">		num[q[i].h]=ans/g; fm[q[i].h]/=g;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) <span class="built_in">printf</span>(<span class="string">"%lld/%lld\n"</span>,num[i],fm[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="带修莫队"><a href="#带修莫队" class="headerlink" title="带修莫队"></a>带修莫队</h2>
       
       
     </div>
@@ -299,13 +284,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/">洛谷 P1736 创意吃鱼法（多维DP）</a></p>
+        <p><span>本文标题:</span><a href="/2018/12/27/莫队学习笔记/">莫队学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月11日 - 10时56分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 18时17分</p>
+        <p><span>发布时间:</span>2018年12月27日 - 11时23分</p>
+        <p><span>最后更新:</span>2018年12月27日 - 19时03分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/" title="洛谷 P1736 创意吃鱼法（多维DP）">http://dftyem.github.io/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/27/莫队学习笔记/" title="莫队学习笔记">http://dftyem.github.io/2018/12/27/莫队学习笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/27/莫队学习笔记/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -318,18 +303,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/12/11/单调队列练习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          单调队列练习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/11/电脑班的裁员（区间DP）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">电脑班的裁员（区间DP）</div>
+    <a href="/2018/12/25/POI2013-USU-Take-out-题解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[POI2013]USU-Take-out 题解</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -340,7 +316,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入输出格式"><span class="toc-number">2.</span> <span class="toc-text">输入输出格式</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通莫队"><span class="toc-number">1.</span> <span class="toc-text">普通莫队</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时间复杂度分析："><span class="toc-number">1.1.</span> <span class="toc-text">时间复杂度分析：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#普通分块板子："><span class="toc-number">1.2.</span> <span class="toc-text">普通分块板子：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#带修莫队"><span class="toc-number">2.</span> <span class="toc-text">带修莫队</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -406,13 +382,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/11/单调队列练习/" title="上一篇: 单调队列练习">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/12/11/电脑班的裁员（区间DP）/" title="下一篇: 电脑班的裁员（区间DP）">
+            <a href="/2018/12/25/POI2013-USU-Take-out-题解/" title="下一篇: [POI2013]USU-Take-out 题解">
                 <i class="fa fa-angle-right"></i>
             </a>
         
