@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>电脑班的裁员（区间DP） | Taduro の blog</title>
+  <title>[CQOI2018]异或序列 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目背景 隔壁的新初一电脑班刚考过一场试，又到了BlingBling的裁员时间，老师把这项工作交给了ZZY来进行。而ZZY最近忙着刷题，就把这重要的任务交（tui）给了你。题目描述 ZZY有独特的裁员技巧：每个同学都有一个考试得分$ai(-1000&amp;lt;=ai&amp;lt;=1000)$，在n个同学$(n&amp;lt;=500)$中选出不大于k段$(k&amp;lt;=n)$相邻的同学留下，裁掉未被选中的同学，使剩">
-<meta name="keywords" content="DP,luogu">
+  <meta name="description" content="传送门 题意：已知一个长度为n的整数数列$a_1,a_2,…,a_n$,给定查询参数l、r,问在$a_l,a_{l+1},…,a_r$区间内，有多少子序列满足异或和等于k。也就是说，对于所有的$x,y (I ≤ x ≤ y ≤ r)$,能够满足$a_x \bigoplus a_{x+1} \bigoplus … \bigoplus a_y = k$的$x,y$有多少组。 数据范围：$1≤n,m≤1">
+<meta name="keywords" content="莫队,前缀和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电脑班的裁员（区间DP）">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/11/电脑班的裁员（区间DP）/index.html">
+<meta property="og:title" content="[CQOI2018]异或序列">
+<meta property="og:url" content="http://dftyem.github.io/2018/12/29/CQOI2018-异或序列/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="题目背景 隔壁的新初一电脑班刚考过一场试，又到了BlingBling的裁员时间，老师把这项工作交给了ZZY来进行。而ZZY最近忙着刷题，就把这重要的任务交（tui）给了你。题目描述 ZZY有独特的裁员技巧：每个同学都有一个考试得分$ai(-1000&amp;lt;=ai&amp;lt;=1000)$，在n个同学$(n&amp;lt;=500)$中选出不大于k段$(k&amp;lt;=n)$相邻的同学留下，裁掉未被选中的同学，使剩">
+<meta property="og:description" content="传送门 题意：已知一个长度为n的整数数列$a_1,a_2,…,a_n$,给定查询参数l、r,问在$a_l,a_{l+1},…,a_r$区间内，有多少子序列满足异或和等于k。也就是说，对于所有的$x,y (I ≤ x ≤ y ≤ r)$,能够满足$a_x \bigoplus a_{x+1} \bigoplus … \bigoplus a_y = k$的$x,y$有多少组。 数据范围：$1≤n,m≤1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T10:16:52.818Z">
+<meta property="og:updated_time" content="2018-12-29T06:40:21.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电脑班的裁员（区间DP）">
-<meta name="twitter:description" content="题目背景 隔壁的新初一电脑班刚考过一场试，又到了BlingBling的裁员时间，老师把这项工作交给了ZZY来进行。而ZZY最近忙着刷题，就把这重要的任务交（tui）给了你。题目描述 ZZY有独特的裁员技巧：每个同学都有一个考试得分$ai(-1000&amp;lt;=ai&amp;lt;=1000)$，在n个同学$(n&amp;lt;=500)$中选出不大于k段$(k&amp;lt;=n)$相邻的同学留下，裁掉未被选中的同学，使剩">
+<meta name="twitter:title" content="[CQOI2018]异或序列">
+<meta name="twitter:description" content="传送门 题意：已知一个长度为n的整数数列$a_1,a_2,…,a_n$,给定查询参数l、r,问在$a_l,a_{l+1},…,a_r$区间内，有多少子序列满足异或和等于k。也就是说，对于所有的$x,y (I ≤ x ≤ y ≤ r)$,能够满足$a_x \bigoplus a_{x+1} \bigoplus … \bigoplus a_y = k$的$x,y$有多少组。 数据范围：$1≤n,m≤1">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -220,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="洛谷p2389-电脑班的裁员（区间DP）" class="article article-type-洛谷p2389" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-CQOI2018-异或序列" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/11/电脑班的裁员（区间DP）/" class="article-date">
-      <time datetime="2018-12-11T02:48:55.000Z" itemprop="datePublished">2018-12-11</time>
+      <a href="/2018/12/29/CQOI2018-异或序列/" class="article-date">
+      <time datetime="2018-12-29T06:09:17.000Z" itemprop="datePublished">2018-12-29</time>
 </a>
     </div>
   
@@ -237,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      电脑班的裁员（区间DP）
+      [CQOI2018]异或序列
     </h1>
   
 
@@ -248,7 +248,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/luogu/">luogu</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/莫队/">莫队</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -258,23 +258,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>题目背景</p>
-<p>隔壁的新初一电脑班刚考过一场试，又到了BlingBling的裁员时间，老师把这项工作交给了ZZY来进行。而ZZY最近忙着刷题，就把这重要的任务交（tui）给了你。<br>题目描述</p>
-<p>ZZY有独特的裁员技巧：每个同学都有一个考试得分$ai(-1000&lt;=ai&lt;=1000)$，在n个同学$(n&lt;=500)$中选出不大于k段$(k&lt;=n)$相邻的同学留下，裁掉未被选中的同学，使剩下同学的得分和最大。要特别注意的是，这次考试答错要扣分【不要问我为什么】，所以得分有可能为负。</p>
+        <p><a href="https://www2.luogu.org/problemnew/show/P4462" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>已知一个长度为n的整数数列$a_1,a_2,…,a_n$,给定查询参数l、r,问在$a_l,a_{l+1},…,a_r$区间内，有多少子序列满足异或和等于k。也就是说，对于所有的$x,y (I ≤ x ≤ y ≤ r)$,能够满足$a_x \bigoplus a_{x+1} \bigoplus … \bigoplus a_y = k$的$x,y$有多少组。</p>
+<p>数据范围：$1≤n,m≤10^5,0≤k,a_i≤10^5,1≤l_j≤r_j≤n$</p>
 <a id="more"></a>
-<p>输入输出格式</p>
-<p>输入格式：</p>
-<p>第一行为n，k，第二行为第1~n位同学的得分。</p>
-<p>输出格式：</p>
-<p>一个数s，为最大得分和。</p>
-<p>—————————我是分割线—————————–</p>
-<p>强力安利出题人写的题解，里面竟然有$O(N)$的做法！</p>
-<p>我这个蒟蒻不才，只好写一下$O(N^3)$的DP维持一下生活。</p>
-<p>首先考虑建模，$f[i][j]$表示前i个数分成最多j个区间的最大价值，那么我们就可以枚举第j个区间的起点k，</p>
-<p>那么如果 $(k,i)&gt;=0$ ，状态转移式子为： $f[i][j]=max(f[i][j],f[k-1][j-1]+sum(k,i))$</p>
-<p>如果 $(k,i)&lt;0$ 就不选这个区间，式子为：$f[i][j]=max(f[i][j],f[k-1][j])$</p>
-<p>最后还有一个点，如果整个数列没有一个正数，答案就是0</p>
-<p>贴代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,k,a[501],s[501],i,j,m;</span><br><span class="line">int f[501][501]; </span><br><span class="line">int main()&#123;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">    for (i=1; i&lt;=n; i++)&#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">        s[i]=s[i-1]+a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    memset(f,-10,sizeof(f));</span><br><span class="line">    for (i=1; i&lt;=n; i++)&#123;</span><br><span class="line">        for (j=1; j&lt;=i; j++)</span><br><span class="line">           for (k=1; k&lt;=j; k++)</span><br><span class="line">           f[i][1]=max(f[i][1],s[j]-s[k-1]);</span><br><span class="line">    &#125;</span><br><span class="line">    for (i=1; i&lt;=n; i++)</span><br><span class="line">      for (j=2; j&lt;=i; j++)&#123;</span><br><span class="line">           for (k=j; k&lt;=i; k++)</span><br><span class="line">               if (s[i]-s[k-1]&gt;=0)</span><br><span class="line">                   f[i][j]=max(f[i][j],f[k-1][j-1]+s[i]-s[k-1]);</span><br><span class="line">               else f[i][j]=max(f[i][j],f[k-1][j]);</span><br><span class="line">           f[i][j]=max(f[i][j],f[i][j-1]);</span><br><span class="line">        &#125;</span><br><span class="line">    printf(&quot;%d&quot;,max(f[n][m],0));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><p>​    维护一个前缀和序列，之后问题就变成了：区间$[l-1,r]$中，有多少对数异或为$k$，开个桶记录异或值，直接莫队即可。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l,h,r;</span><br><span class="line">&#125;q[<span class="number">100001</span>];</span><br><span class="line"><span class="keyword">int</span> o[<span class="number">200001</span>],bl[<span class="number">100001</span>],n,m,ans,r;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100001</span>],num[<span class="number">100001</span>],k,blo,l;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node c,node d)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (bl[c.l]!=bl[d.l]) <span class="keyword">return</span> c.l&lt;d.l;</span><br><span class="line">	<span class="keyword">if</span> (bl[c.l]&amp;<span class="number">1</span>) <span class="keyword">return</span> c.r&lt;d.r; <span class="keyword">return</span> c.r&gt;d.r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;ans+=o[a[x]^k]; o[a[x]]++;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;ans-=o[k^a[x]]; o[a[x]]--;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;k); blo=<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">		bl[i]=(i<span class="number">-1</span>)/blo+<span class="number">1</span>;</span><br><span class="line">		a[i]=a[i<span class="number">-1</span>]^a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;q[i].l,&amp;q[i].r);</span><br><span class="line">		q[i].h=i; q[i].l--;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(q+<span class="number">1</span>,q+m+<span class="number">1</span>,cmp); l=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="keyword">while</span> (l&gt;q[i].l) l--,add(l);</span><br><span class="line">		<span class="keyword">while</span> (l&lt;q[i].l) del(l),l++;</span><br><span class="line">		<span class="keyword">while</span> (r&lt;q[i].r) r++,add(r);</span><br><span class="line">		<span class="keyword">while</span> (r&gt;q[i].r) del(r),r--;</span><br><span class="line">		num[q[i].h]=ans;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,num[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -284,13 +273,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/11/电脑班的裁员（区间DP）/">电脑班的裁员（区间DP）</a></p>
+        <p><span>本文标题:</span><a href="/2018/12/29/CQOI2018-异或序列/">[CQOI2018]异或序列</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月11日 - 10时48分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 18时16分</p>
+        <p><span>发布时间:</span>2018年12月29日 - 14时09分</p>
+        <p><span>最后更新:</span>2018年12月29日 - 14时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/11/电脑班的裁员（区间DP）/" title="电脑班的裁员（区间DP）">http://dftyem.github.io/2018/12/11/电脑班的裁员（区间DP）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/11/电脑班的裁员（区间DP）/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/12/29/CQOI2018-异或序列/" title="[CQOI2018]异或序列">http://dftyem.github.io/2018/12/29/CQOI2018-异或序列/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/29/CQOI2018-异或序列/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -303,18 +292,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          洛谷 P1736 创意吃鱼法（多维DP）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2018/12/27/莫队学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">莫队学习笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -325,7 +305,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意："><span class="toc-number">1.</span> <span class="toc-text">题意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法："><span class="toc-number">2.</span> <span class="toc-text">解法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码："><span class="toc-number">3.</span> <span class="toc-text">代码：</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -391,13 +371,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/11/洛谷-P1736-创意吃鱼法（多维DP）/" title="上一篇: 洛谷 P1736 创意吃鱼法（多维DP）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/12/10/hello-world/" title="下一篇: Hello World">
+            <a href="/2018/12/27/莫队学习笔记/" title="下一篇: 莫队学习笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
