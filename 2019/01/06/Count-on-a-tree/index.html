@@ -3,19 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>英语 | Taduro の blog</title>
+  <title>Count on a tree | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+  <meta name="description" content="学习了主席树后被虐了。。。 传送门">
+<meta name="keywords" content="主席树,树链剖分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="英语">
-<meta property="og:url" content="http://dftyem.github.io/2018/12/23/英语/index.html">
+<meta property="og:title" content="Count on a tree">
+<meta property="og:url" content="http://dftyem.github.io/2019/01/06/Count-on-a-tree/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+<meta property="og:description" content="学习了主席树后被虐了。。。 传送门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-23T07:33:31.491Z">
+<meta property="og:updated_time" content="2019-01-06T07:33:12.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="英语">
-<meta name="twitter:description" content="我英语放什么歌好呢？ A  $Alan Walker$     B 二刺猿         C 咕咕咕">
+<meta name="twitter:title" content="Count on a tree">
+<meta name="twitter:description" content="学习了主席树后被虐了。。。 传送门">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -219,11 +220,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-英语" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Count-on-a-tree" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/23/英语/" class="article-date">
-      <time datetime="2018-12-23T07:26:20.000Z" itemprop="datePublished">2018-12-23</time>
+      <a href="/2019/01/06/Count-on-a-tree/" class="article-date">
+      <time datetime="2019-01-06T07:12:32.000Z" itemprop="datePublished">2019-01-06</time>
 </a>
     </div>
   
@@ -236,7 +237,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      英语
+      Count on a tree
     </h1>
   
 
@@ -246,6 +247,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主席树/">主席树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树链剖分/">树链剖分</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -253,8 +258,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>我英语放什么歌好呢？</p>
-<p>A  $Alan Walker$     B 二刺猿         C 咕咕咕 </p>
+        <p>学习了主席树后被虐了。。。</p>
+<p><a href="https://www.luogu.org/problemnew/show/P2633" target="_blank" rel="noopener">传送门</a></p>
+<a id="more"></a>
+<p><a href="https://www.luogu.org/problemnew/show/P2633" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="题意："><a href="#题意：" class="headerlink" title="题意："></a>题意：</h3><p>求静态树上第k小，强制在线。</p>
+<h3 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h3><p>刚学了主席树开始做这题，一开始以为是树剖还在想零零碎碎的区间怎么合并，但实际上用树上差分就好了。</p>
+<p>在树上建主席树，把a结点基于fa[a]结点建树。</p>
+<p>查询的时候用$sum[x]+sum[y]-sum[lca]-sum[fa[lca]]$判断</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100001</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> h,z;</span><br><span class="line">&#125;a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> next,to;</span><br><span class="line">&#125;w[maxn&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> head[maxn*<span class="number">25</span>],edg,cnt,top[<span class="number">100010</span>*<span class="number">25</span>],sum[maxn*<span class="number">25</span>];</span><br><span class="line"><span class="keyword">int</span> c[maxn],hs[maxn],size[maxn],ls[maxn*<span class="number">25</span>],n,m;</span><br><span class="line"><span class="keyword">int</span> b[maxn],deep[maxn],fa[maxn],rs[maxn*<span class="number">25</span>],bs[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node c,node d)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> c.z&lt;d.z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	w[++edg].next=head[x];</span><br><span class="line">	w[edg].to=y; head[x]=edg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">built</span><span class="params">(<span class="keyword">int</span> &amp;rt,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	rt=++cnt;</span><br><span class="line">	<span class="keyword">if</span> (l==r) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	built(ls[rt],l,mid);</span><br><span class="line">	built(rs[rt],mid+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> rt,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t=++cnt;</span><br><span class="line">	ls[t]=ls[rt],rs[t]=rs[rt],sum[t]=sum[rt]+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (l==r) <span class="keyword">return</span> t;  <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (p&lt;=mid) ls[t]=build(ls[rt],l,mid,p);</span><br><span class="line">	<span class="keyword">else</span> rs[t]=build(rs[rt],mid+<span class="number">1</span>,r,p);</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//void build(int rt,int &amp;now,int l,int r,int p)&#123;</span></span><br><span class="line"><span class="comment">//	now=++cnt; sum[now]=sum[rt]+1;</span></span><br><span class="line"><span class="comment">//	if (l==r) return;</span></span><br><span class="line"><span class="comment">//	int mid=(l+r)&gt;&gt;1;</span></span><br><span class="line"><span class="comment">//	if (p&lt;=mid) rs[now]=rs[rt],build(ls[rt],ls[now],l,mid,p);</span></span><br><span class="line"><span class="comment">//	else ls[now]=ls[rt],build(rs[rt],rs[now],mid+1,r,p);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> da)</span></span>&#123;</span><br><span class="line">	fa[x]=da; size[x]=<span class="number">1</span>;</span><br><span class="line">	bs[x]=build(bs[da],<span class="number">1</span>,b[a[n].h],b[x]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)&#123;</span><br><span class="line">		<span class="keyword">if</span> (w[i].to!=da)&#123;</span><br><span class="line">			deep[w[i].to]=deep[x]+<span class="number">1</span>;</span><br><span class="line">			dfs1(w[i].to,x);</span><br><span class="line">			size[x]+=size[w[i].to];</span><br><span class="line">			<span class="keyword">if</span> (size[w[i].to]&gt;size[hs[x]]) hs[x]=w[i].to;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> tp)</span></span>&#123;</span><br><span class="line">	top[x]=tp;</span><br><span class="line">	<span class="keyword">if</span> (hs[x]) dfs2(hs[x],tp);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)</span><br><span class="line">		<span class="keyword">if</span> (w[i].to!=fa[x]&amp;&amp;w[i].to!=hs[x])</span><br><span class="line">			dfs2(w[i].to,w[i].to);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (top[x]!=top[y])&#123;</span><br><span class="line">		<span class="keyword">if</span> (deep[top[x]]&lt;deep[top[y]]) swap(x,y);</span><br><span class="line">		x=fa[top[x]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (deep[x]&lt;deep[y]) swap(x,y);</span><br><span class="line">	<span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> da,<span class="keyword">int</span> gr,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (l&gt;=r) <span class="keyword">return</span> l; <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> num=sum[ls[x]]+sum[ls[y]]-sum[ls[da]]-sum[ls[gr]];</span><br><span class="line">	<span class="keyword">if</span> (num&gt;=k) <span class="keyword">return</span> query(ls[x],ls[y],ls[da],ls[gr],l,mid,k);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> query(rs[x],rs[y],rs[da],rs[gr],mid+<span class="number">1</span>,r,k-num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> last=<span class="number">0</span>,x,y,z;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i].z);</span><br><span class="line">		a[i].h=i;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp); a[<span class="number">0</span>].z=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">		b[a[i].h]=b[a[i<span class="number">-1</span>].h];</span><br><span class="line">		<span class="keyword">if</span> (a[i].z!=a[i<span class="number">-1</span>].z) b[a[i].h]++;</span><br><span class="line">		c[b[a[i].h]]=a[i].z;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n<span class="number">-1</span>; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">		add(x,y); add(y,x);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//	built(bs[0],1,b[a[n].h]);</span></span><br><span class="line">	deep[<span class="number">1</span>]=<span class="number">1</span>; dfs1(<span class="number">1</span>,<span class="number">0</span>); dfs2(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span> (m--)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line">		x^=last; <span class="keyword">int</span> lc=lca(x,y);</span><br><span class="line">		last=c[query(bs[x],bs[y],bs[lc],bs[fa[lc]],<span class="number">1</span>,b[a[n].h],z)];</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,last);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改天写一下主席树学习笔记 <del>不会咕</del></p>
 
       
       
@@ -264,13 +277,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/23/英语/">英语</a></p>
+        <p><span>本文标题:</span><a href="/2019/01/06/Count-on-a-tree/">Count on a tree</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2018年12月23日 - 15时26分</p>
-        <p><span>最后更新:</span>2018年12月23日 - 15时33分</p>
+        <p><span>发布时间:</span>2019年01月06日 - 15时12分</p>
+        <p><span>最后更新:</span>2019年01月06日 - 15时33分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/23/英语/" title="英语">http://dftyem.github.io/2018/12/23/英语/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2018/12/23/英语/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/01/06/Count-on-a-tree/" title="Count on a tree">http://dftyem.github.io/2019/01/06/Count-on-a-tree/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/01/06/Count-on-a-tree/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -283,18 +296,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/12/23/SHOI2010-最小生成树/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [SHOI2010]最小生成树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/11/NOIP2018游记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NOIP2018游记</div>
+    <a href="/2019/01/04/方格取数问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">方格取数问题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -305,7 +309,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意："><span class="toc-number">1.</span> <span class="toc-text">题意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做法："><span class="toc-number">2.</span> <span class="toc-text">做法：</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -371,13 +375,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/23/SHOI2010-最小生成树/" title="上一篇: [SHOI2010]最小生成树">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/12/11/NOIP2018游记/" title="下一篇: NOIP2018游记">
+            <a href="/2019/01/04/方格取数问题/" title="下一篇: 方格取数问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
