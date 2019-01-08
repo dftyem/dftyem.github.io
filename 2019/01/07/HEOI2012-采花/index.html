@@ -3,20 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>方格取数问题 | Taduro の blog</title>
+  <title>[HEOI2012]采花 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="复习一下网络流。。。 传送门">
-<meta name="keywords" content="网络流">
+  <meta name="description" content="一道神仙题。 传送门">
+<meta name="keywords" content="树状数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方格取数问题">
-<meta property="og:url" content="http://dftyem.github.io/2019/01/04/方格取数问题/index.html">
+<meta property="og:title" content="[HEOI2012]采花">
+<meta property="og:url" content="http://dftyem.github.io/2019/01/07/HEOI2012-采花/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="复习一下网络流。。。 传送门">
+<meta property="og:description" content="一道神仙题。 传送门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-06T07:32:19.297Z">
+<meta property="og:image" content="https://cdn.luogu.org/upload/pic/48233.png">
+<meta property="og:updated_time" content="2019-01-07T11:31:21.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="方格取数问题">
-<meta name="twitter:description" content="复习一下网络流。。。 传送门">
+<meta name="twitter:title" content="[HEOI2012]采花">
+<meta name="twitter:description" content="一道神仙题。 传送门">
+<meta name="twitter:image" content="https://cdn.luogu.org/upload/pic/48233.png">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -220,11 +222,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-方格取数问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HEOI2012-采花" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/01/04/方格取数问题/" class="article-date">
-      <time datetime="2019-01-04T11:20:46.000Z" itemprop="datePublished">2019-01-04</time>
+      <a href="/2019/01/07/HEOI2012-采花/" class="article-date">
+      <time datetime="2019-01-07T08:02:22.000Z" itemprop="datePublished">2019-01-07</time>
 </a>
     </div>
   
@@ -237,7 +239,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      方格取数问题
+      [HEOI2012]采花
     </h1>
   
 
@@ -248,7 +250,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树状数组/">树状数组</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -258,15 +260,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>复习一下网络流。。。</p>
-<p><a href="https://www.luogu.org/problemnew/show/P2774" target="_blank" rel="noopener">传送门</a></p>
+        <p>一道神仙题。</p>
+<p><a href="https://www2.luogu.org/problemnew/show/P4113" target="_blank" rel="noopener">传送门</a></p>
 <a id="more"></a>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个有 m*n 个方格的棋盘中，每个方格中有一个正整数。现要从方格中取数，使任意 2 个数所在方格没有公共边，且取出的数的总和最大。试设计一个满足要求的取数算法。对于给定的方格棋盘，按照取数要求编程找出总和最大的数。</p>
-<h3 id="做法："><a href="#做法：" class="headerlink" title="做法："></a>做法：</h3><p>这题的二分图模型十分套路，是一道二分图带权最大独立集问题，有一个结论：二分图最大独立集=所有的点权-最小点覆盖数（用最少的点覆盖所有边）。</p>
-<p>解释一下：因为所有的边已经被最小点覆盖点集中的点覆盖了，那么删掉这些点就是删掉所有边，剩下的点都是不联通且最大的。</p>
-<p>而根据König定理，最小点覆盖=最大匹配。所以我们只要求最大匹配就好了。</p>
-<p>（吐槽一下：这个定理网上证明并不多，而且许多证明都是用“显然”混过去了关键点，其他题解也没有说为什么是总点权-最小割，这里推荐<a href="http://www.matrix67.com/blog/archives/116#comment-4409" target="_blank" rel="noopener">Matrix67的证明</a>）</p>
-<p>这样我们就把横纵坐标奇偶性相同的点放在二分图的一侧，对相邻的点连一条容量为无限的边，二分图两侧的点分别向源点和汇点连一条容量为点权的边，之后跑一边最小割即可。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y,next,z;</span><br><span class="line">&#125;w[<span class="number">2000001</span>];</span><br><span class="line"><span class="keyword">int</span> tail,m,deep[<span class="number">110</span>][<span class="number">110</span>],head[<span class="number">110</span>][<span class="number">110</span>],a[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> heap,n,team[<span class="number">10010</span>][<span class="number">2</span>],cnt,tim,sum,ans,o[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> dx[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;,dy[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x1,<span class="keyword">int</span> y1,<span class="keyword">int</span> x2,<span class="keyword">int</span> y2,<span class="keyword">int</span> z)</span></span>&#123;</span><br><span class="line">	w[cnt].next=head[x1][y1];</span><br><span class="line">	w[cnt].x=x2; w[cnt].y=y2;</span><br><span class="line">	w[cnt].z=z; head[x1][y1]=cnt; cnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">	heap=tail=<span class="number">1</span>; tim++; o[<span class="number">0</span>][<span class="number">0</span>]=tim;</span><br><span class="line">	team[heap][<span class="number">0</span>]=team[heap][<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	deep[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (heap&lt;=tail)&#123;</span><br><span class="line">		<span class="keyword">int</span> x=team[heap][<span class="number">0</span>],y=team[heap][<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x][y]; i!=<span class="number">-1</span>; i=w[i].next)&#123;</span><br><span class="line">			<span class="keyword">if</span> (w[i].z&amp;&amp;o[w[i].x][w[i].y]!=tim)&#123;</span><br><span class="line">				tail++; o[w[i].x][w[i].y]=tim;</span><br><span class="line">				deep[w[i].x][w[i].y]=deep[x][y]+<span class="number">1</span>;</span><br><span class="line">				team[tail][<span class="number">0</span>]=w[i].x; team[tail][<span class="number">1</span>]=w[i].y;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		heap++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (o[n+<span class="number">1</span>][m+<span class="number">1</span>]==tim);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((!l)||(x==n+<span class="number">1</span>&amp;&amp;y==m+<span class="number">1</span>)) <span class="keyword">return</span> l;</span><br><span class="line">	<span class="keyword">int</span> used=<span class="number">0</span>,minn,z;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=head[x][y]; i!=<span class="number">-1</span>; i=w[i].next)&#123;</span><br><span class="line">		<span class="keyword">if</span> (deep[w[i].x][w[i].y]==deep[x][y]+<span class="number">1</span>&amp;&amp;w[i].z)&#123;</span><br><span class="line">			minn=min(l-used,w[i].z);</span><br><span class="line">			z=dfs(w[i].x,w[i].y,minn);</span><br><span class="line">			<span class="keyword">if</span> (z)&#123;</span><br><span class="line">				w[i].z-=z; w[i^<span class="number">1</span>].z+=z;</span><br><span class="line">				used+=z; <span class="keyword">if</span> (used==l) <span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!used) deep[x][y]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> used;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]); sum+=a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=m; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (i%<span class="number">2</span>==j%<span class="number">2</span>)&#123;</span><br><span class="line">				add(<span class="number">0</span>,<span class="number">0</span>,i,j,a[i][j]);</span><br><span class="line">				add(i,j,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=<span class="number">4</span>; k++)&#123;</span><br><span class="line">					<span class="keyword">if</span> (i+dx[k]&lt;=<span class="number">0</span>||i+dx[k]&gt;n) <span class="keyword">continue</span>;</span><br><span class="line">					<span class="keyword">if</span> (j+dy[k]&lt;=<span class="number">0</span>||j+dy[k]&gt;m) <span class="keyword">continue</span>;</span><br><span class="line">					add(i,j,i+dx[k],j+dy[k],<span class="number">1e9</span>);</span><br><span class="line">					add(i+dx[k],j+dy[k],i,j,<span class="number">0</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				add(i,j,n+<span class="number">1</span>,m+<span class="number">1</span>,a[i][j]);</span><br><span class="line">				add(n+<span class="number">1</span>,m+<span class="number">1</span>,i,j,<span class="number">0</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">while</span> (bfs()) ans+=dfs(<span class="number">0</span>,<span class="number">0</span>,<span class="number">1e9</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum-ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>求区间中出现两次的颜色的个数，卡莫队。</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>这题是HH的项链那题的变形吧，但那题我用莫队水过去了，于是到这题就自闭了。</p>
+<p>首先做法是离线，将询问以l为第一关键字,r为第二关键字排序，这样我们得到一个l有序的询问序列。</p>
+<p>对于每种颜色，预处理出它第一次出现的位置$p[i]$和每个位置后一个位置$nx[i]$。</p>
+<p>用一个l指针从左往右扫，用树状数组维护前缀和，使l后每个颜色的<strong>第二个</strong>出现位置上的值为一，之后就是求$[l,r]$的和。</p>
+<p>具体实现代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=next; j&lt;q[i].l; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (nx[j]) add(nx[j],<span class="number">-1</span>);</span><br><span class="line">			<span class="keyword">if</span> (nx[j]&amp;&amp;nx[nx[j]]) add(nx[nx[j]],<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		next=q[i].l;</span><br><span class="line">		num[q[i].h]=query(q[i].r)-query(q[i].l<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>我觉得我讲的并不太易懂，所以带大家来看一组样例。</p>
+<p><img src="https://cdn.luogu.org/upload/pic/48233.png" alt=""></p>
+<p><del>感觉我这个样例十分垃圾</del></p>
+<p>由于我太菜了做不出动态图，所以大家可以无视我的箭头和指针单玩样例。</p>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l,r,h;</span><br><span class="line">&#125;q[<span class="number">2000001</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2000010</span>],nx[<span class="number">2000001</span>],p[<span class="number">2000001</span>];</span><br><span class="line"><span class="keyword">int</span> next=<span class="number">1</span>,num[<span class="number">2000001</span>],n,m,k,c[<span class="number">2000001</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node c,node d)</span></span>&#123;<span class="keyword">return</span> c.l!=d.l?c.l&lt;d.l:c.r&lt;d.r;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> x&amp;(-x);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">while</span>(x&lt;=n) c[x]+=y,x+=lowbit(x);&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">int</span> ans=<span class="number">0</span>;<span class="keyword">while</span>(x)ans+=c[x],x-=lowbit(x);<span class="keyword">return</span> ans;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;k,&amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;=<span class="number">1</span>; i--) nx[i]=p[a[i]],p[a[i]]=i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=k; i++) <span class="keyword">if</span> (p[i]&amp;&amp;nx[p[i]]) add(nx[p[i]],<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;q[i].l,&amp;q[i].r);</span><br><span class="line">		q[i].h=i;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(q+<span class="number">1</span>,q+m+<span class="number">1</span>,cmp);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j=next; j&lt;q[i].l; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (nx[j]) add(nx[j],<span class="number">-1</span>);</span><br><span class="line">			<span class="keyword">if</span> (nx[j]&amp;&amp;nx[nx[j]]) add(nx[nx[j]],<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		next=q[i].l;</span><br><span class="line">		num[q[i].h]=query(q[i].r)-query(q[i].l<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,num[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -276,13 +284,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/01/04/方格取数问题/">方格取数问题</a></p>
+        <p><span>本文标题:</span><a href="/2019/01/07/HEOI2012-采花/">[HEOI2012]采花</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2019年01月04日 - 19时20分</p>
-        <p><span>最后更新:</span>2019年01月06日 - 15时32分</p>
+        <p><span>发布时间:</span>2019年01月07日 - 16时02分</p>
+        <p><span>最后更新:</span>2019年01月07日 - 19时31分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/01/04/方格取数问题/" title="方格取数问题">http://dftyem.github.io/2019/01/04/方格取数问题/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/01/04/方格取数问题/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/01/07/HEOI2012-采花/" title="[HEOI2012]采花">http://dftyem.github.io/2019/01/07/HEOI2012-采花/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/01/07/HEOI2012-采花/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,18 +303,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/01/06/Count-on-a-tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Count on a tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/01/SP4060-KPGAME-A-game-with-probability/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SP4060 KPGAME-A game with probability</div>
+    <a href="/2019/01/06/Count-on-a-tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Count on a tree</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -317,7 +316,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做法："><span class="toc-number">2.</span> <span class="toc-text">做法：</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#做法"><span class="toc-number">2.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完整代码"><span class="toc-number">3.</span> <span class="toc-text">完整代码</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -383,13 +382,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/01/06/Count-on-a-tree/" title="上一篇: Count on a tree">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/01/01/SP4060-KPGAME-A-game-with-probability/" title="下一篇: SP4060 KPGAME-A game with probability">
+            <a href="/2019/01/06/Count-on-a-tree/" title="下一篇: Count on a tree">
                 <i class="fa fa-angle-right"></i>
             </a>
         
