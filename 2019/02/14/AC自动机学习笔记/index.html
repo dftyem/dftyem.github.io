@@ -14,8 +14,8 @@
 <meta property="og:description" content="RT，我学习了AC自动机。本文会介绍一些AC自动机的基本姿势，不会咕。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://dftyem.github.io/img/ac1.png">
-<meta property="og:image" content="http://dftyem.github.io/img/ac自动机样例.png">
-<meta property="og:updated_time" content="2019-02-14T08:14:20.709Z">
+<meta property="og:image" content="http://dftyem.github.io/img/ac2.png">
+<meta property="og:updated_time" content="2019-02-14T08:18:50.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AC自动机学习笔记">
 <meta name="twitter:description" content="RT，我学习了AC自动机。本文会介绍一些AC自动机的基本姿势，不会咕。">
@@ -289,7 +289,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> l=s.length();</span><br><span class="line"><span class="keyword">int</span> now=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;++i)</span><br><span class="line">&#123;</span><br><span class="line">	now=AC[now].vis[s[i]-<span class="string">'a'</span>];<span class="comment">//向下一层</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> t=now;t;t=AC[t].fail)<span class="comment">//循环求解</span></span><br><span class="line">		 Ans[AC[t].end].num++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>但这个会慢是因为每一位都跳到了根，然而没有必要这样做。</p>
 <p>以样例为例</p>
-<p><img src="/img/ac自动机样例.png" alt=""></p>
+<p><img src="/img/ac2.png" alt=""></p>
 <p>每个点有且只有一个fail指针，而根不算fail指针，将fail指向的点看成自己的爸爸，这样就形成了一棵fail树。</p>
 <p>我们暴力统计的时候，每到达一个点是一个单词的末尾，就给这个单词出现次数+1，同时给这个点到根的所有是单词末尾的点都+1。</p>
 <p>这样我们只要打好标记，结束后求一遍每个点的子树和，就可以知道他被打了多少次标记了。</p>
@@ -306,7 +306,7 @@
         <p><span>本文标题:</span><a href="/2019/02/14/AC自动机学习笔记/">AC自动机学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>2019年02月14日 - 14时51分</p>
-        <p><span>最后更新:</span>2019年02月14日 - 16时14分</p>
+        <p><span>最后更新:</span>2019年02月14日 - 16时18分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/02/14/AC自动机学习笔记/" title="AC自动机学习笔记">http://dftyem.github.io/2019/02/14/AC自动机学习笔记/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/02/14/AC自动机学习笔记/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
