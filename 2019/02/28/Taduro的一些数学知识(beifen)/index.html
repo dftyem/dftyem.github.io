@@ -3,19 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Hello World | Taduro の blog</title>
+  <title>Taduro的一些数学知识 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+  <meta name="description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？">
+<meta name="keywords" content="学习笔记,数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://dftyem.github.io/2019/02/12/hello-world/index.html">
+<meta property="og:title" content="Taduro的一些数学知识">
+<meta property="og:url" content="http://dftyem.github.io/2019/02/28/Taduro的一些数学知识(beifen)/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+<meta property="og:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-11T05:06:20.000Z">
+<meta property="og:updated_time" content="2019-03-07T08:07:10.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。 About me来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze 旧blog">
+<meta name="twitter:title" content="Taduro的一些数学知识">
+<meta name="twitter:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -225,11 +226,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Taduro的一些数学知识(beifen)" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/12/hello-world/" class="article-date">
-      <time datetime="2019-02-12T03:58:23.142Z" itemprop="datePublished">2019-02-12</time>
+      <a href="/2019/02/28/Taduro的一些数学知识(beifen)/" class="article-date">
+      <time datetime="2019-02-28T13:23:28.000Z" itemprop="datePublished">2019-02-28</time>
 </a>
     </div>
   
@@ -242,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Taduro的一些数学知识
     </h1>
   
 
@@ -252,6 +253,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -259,9 +264,58 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在神仙Steve−braveman的帮助下，这个github博客搭好了，于是以后就在这里写文章什么的了。</p>
-<p>About me<br>来自SD的一个slyz彩笔OIer,常用ID：多弗桃,Taduro,bronze</p>
-<p><a href="https://www.cnblogs.com/taduro/" target="_blank" rel="noopener">旧blog</a></p>
+        <p>听说学数学对身体好。</p>
+<p>为了强身健体，我开始学习数学。这里会更一些数学知识。</p>
+<p><del>其他的东西要不要也写一个知识点汇总呢？</del></p>
+<a id="more"></a>
+<h2 id="一些前置知识"><a href="#一些前置知识" class="headerlink" title="一些前置知识"></a>一些前置知识</h2><h3 id="数论分块"><a href="#数论分块" class="headerlink" title="数论分块"></a>数论分块</h3><p><del>我知道把这个放在第一个显得很low</del></p>
+<p>如果我们要求一个式子:$\sum_{i=1}^{n} ⌊\frac{n}{i}⌋$ 还是很常见的对吧，由于向下取整$⌊\frac{n}{i}⌋$最多只有$\sqrt{n}$种取值，我们可以枚举取值，算出这个值的个数乘起来</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (ll l=<span class="number">1</span>,r; l&lt;=n; l=r+<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (l&lt;=k) r=min(k/(k/l),n); <span class="keyword">else</span> r=n;</span><br><span class="line">    ans-=(r-l+<span class="number">1</span>)*(k/l)*(l+r)/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="BSGS及其扩展"><a href="#BSGS及其扩展" class="headerlink" title="BSGS及其扩展"></a>BSGS及其扩展</h3><p>求$y^{x}=z(mod\ p)$，给你y,z,p求最小的正整数x。</p>
+<h4 id="普通BSGS"><a href="#普通BSGS" class="headerlink" title="普通BSGS"></a>普通BSGS</h4><p>保证$gcd(y,p)=1$，用分块思想优化暴力</p>
+<p>设$x=a\times m-b$ 那么 $y^{a\times m}=z\times y^b(mod\ p)$</p>
+<p>可以枚举b，把$z\times y^b​$用哈希存起来，之后枚举a，查表看看有没有对应的b，因为y和p互质，所以并没有什么问题。可以看出$m=\sqrt{p}​$时复杂度是最优的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">BSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (y%p==<span class="number">0</span>)&#123;<span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>); <span class="keyword">return</span>;&#125;</span><br><span class="line">    y%=p; z%=p; <span class="keyword">if</span> (z==<span class="number">1</span>)&#123;<span class="built_in">puts</span>(<span class="string">"0"</span>); <span class="keyword">return</span>;&#125;</span><br><span class="line">    ll m=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>,sq=z; cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">0</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">        add(sq%mod,i,sq);</span><br><span class="line">        sq=sq*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">    sq=ksm(y,m);ll sum=sq;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        ll u=query(sum);</span><br><span class="line">        <span class="keyword">if</span> (u!=<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,i*m-u);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum=sum*sq%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="困难情况"><a href="#困难情况" class="headerlink" title="困难情况"></a>困难情况</h4><p>如果$gcd(y,p)=d$呢？</p>
+<p>把方程变成$y^x+kp=z$，高次同余方程和一般的一样，要求$gcd(y,p)|z$。可以不断出掉d，最终使y和p互质。</p>
+<p>最后式子长这样：$\frac{y^k}{d}y^{x-k}=\frac{z}{d}(mod\ \frac{p}{d})$(除了k个d)，这样我们BSGS解出来的是x-k，加上k就好了。</p>
+<h3 id="数论函数基本知识"><a href="#数论函数基本知识" class="headerlink" title="数论函数基本知识"></a>数论函数基本知识</h3><h4 id="运算法则"><a href="#运算法则" class="headerlink" title="运算法则"></a>运算法则</h4><p>加法：$(f+g)(x)=f(x)+g(x)$，每一项都加起来</p>
+<p>乘一个常数：$(k\times f)(x)=x\times f(x)$，每一项都乘x</p>
+<p>狄利克雷卷积：两个函数的乘法$f<em>g=\sum_{d|n}f(n/d)</em>g(d)$(n是两个函数的定义域，需要相同)</p>
+<p>卷积满足：</p>
+<p>交换律：$f<em>g=g</em>f$</p>
+<p>结合律： $a\times (b\times c)=(a\times b)\times c$</p>
+<p>分配率：$a\times(b+c)=a\times b+a\times c$</p>
+<p>单位元：$e(x)=[x==1]$，只有在x=1的时候值为1。任何函数和e的卷积都是它本身。</p>
+<p>逆元：定义每一个$f(1)≠0​$的函数f，都有$f*g=e​$，g是f在卷积意义下的逆元。</p>
+<p>函数求逆的方法：<br>$$<br>g(n)=\frac{1}{f(1)}([n==1]−\sum_{i|n,i≠1}f(i)g(\frac{n}{i}))<br>$$<br>这样$f\times g=$$([n==1]-\sum_{i|n,i≠1}f(i)g(\frac{n}{i}))+\sum_{i|n,i≠1}f(i)g(\frac{n}{i})$</p>
+<p>对卷积的介绍参考了<a href="http://www.cnblogs.com/heyujun/p/10179497.html" target="_blank" rel="noopener">这篇文章</a></p>
+<h3 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h3><p>这是很重要的东西。</p>
+<p>定义：</p>
+<p>积性函数：对于<strong>任意互质的整数</strong>a和b有性质f(ab)=f(a)f(b)的数论函数。</p>
+<p>完全积性函数：对于<strong>任意整数</strong>a和b有性质f(ab)=f(a)f(b)的数论函数。  </p>
+<h4 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数"></a>常见的积性函数</h4><p>$μ(n)$：莫比乌斯函数<br>$φ(n)$：欧拉函数<br>$d(n)$：一个数n的约数个数<br>$σ(n)$：一个数n的约数和</p>
+<p>$1(n)=1$：恒等函数</p>
+<p>$id(n)=n$：单位函数</p>
+<p>$e(n)=[n==1]$：元函数</p>
+<p>两个积性函数的卷积也是积性函数。</p>
+<p>众所周知，积性函数有一个重要的性质：$f(i\times j)=f(i)\times f(j)(gcd(i,j)=1)$</p>
+<p>求积性函数可以线性筛（杜教筛和Min_25先咕掉）</p>
+<p>能筛出的积性函数f必须能快速算出：</p>
+<p>1.$f(1)$</p>
+<p>2.$f(p)$(p是质数)</p>
+<p>3.$f(p^k)$(p是质数)</p>
+<p>求出这三个之后我们可以用线性筛求积性函数。</p>
+<p>设要求的是f(x)，$x=p1^{a1}*p2^{a2}…$<br>x只会被它的最小质因子筛到，比如p1<br>当p1和i互质时，直接$f(p1\times i)=f(p1)\times f(i)$<br>当p1是i的因子时，根据线性筛得出p1是i的最小质因子<br>那么我们要记一个low(x)表示x的最小质因子的次幂值，就是$p1^{a1}$<br>这样$f(p1\times i)=f(low(i)\times p1)\times f(i/low(i))$，显然$low(i)\times p1$跟$i/low(i)$互质对吧。<br>欧拉筛积性函数的板子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sieve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    zhi[<span class="number">1</span>]=low[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    f[<span class="number">1</span>]=对<span class="number">1</span>直接定义;</span><br><span class="line">    <span class="keyword">for</span> (ll i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (!zhi[i]) low[i]=pri[++tot]=i,f[i]=对质数直接定义;</span><br><span class="line">        <span class="keyword">for</span> (ll j=<span class="number">1</span>;j&lt;=tot&amp;&amp;i*pri[j]&lt;=n;j++)&#123;</span><br><span class="line">            zhi[i*pri[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i%pri[j]==<span class="number">0</span>)&#123;</span><br><span class="line">                low[i*pri[j]]=low[i]*pri[j];</span><br><span class="line">                <span class="keyword">if</span> (low[i]==i) f[i*pri[j]]=对质数的若干次幂进行定义(一般由f[i]递推);</span><br><span class="line">                <span class="keyword">else</span> f[i*pri[j]]=f[i/low[i]]*f[low[i]*pri[j]];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            low[i*pri[j]]=pri[j];</span><br><span class="line">            f[i*pri[j]]=f[i]*f[pri[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上很多常用积性函数都不需要这个模板，所以我粘的<a href="https://www.cnblogs.com/zhoushuyu/p/8275530.html" target="_blank" rel="noopener">租酥雨大佬的板子</a>。</p>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><p>谢特写反演总结要写到死好吧！！！</p>
+<p>于是写一些套路好了</p>
+<p>1.遇到什么[x==1]直接把他变成$\sum_{d|x}μ(d)$，因为这是元函数，也就是μ跟1的卷积。</p>
+<p>$\sum_{i=1}^{n}\sum_{j=1}^{m}[(i,j)==1]=$$\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{d|i,d|j}μ(d)$</p>
+<p>2.遇到[(i,j)==k]直接把i和j的上界除k，相当于枚举k的倍数，就变成$[(i,j)=1]$。</p>
+<p>3.遇到两个变量都是自己推出来的可以选择枚举他们的乘积（我猜没人看得懂）</p>
+<p>4.为什么我不会用反演公式啊。。。</p>
 
       
       
@@ -271,13 +325,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/02/12/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2019/02/28/Taduro的一些数学知识(beifen)/">Taduro的一些数学知识</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2019年02月12日 - 11时58分</p>
-        <p><span>最后更新:</span>2018年12月11日 - 13时06分</p>
+        <p><span>发布时间:</span>2019年02月28日 - 21时23分</p>
+        <p><span>最后更新:</span>2019年03月07日 - 16时07分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/12/hello-world/" title="Hello World">http://dftyem.github.io/2019/02/12/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/02/12/hello-world/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/02/28/Taduro的一些数学知识(beifen)/" title="Taduro的一些数学知识">http://dftyem.github.io/2019/02/28/Taduro的一些数学知识(beifen)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/02/28/Taduro的一些数学知识(beifen)/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -290,18 +344,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/12/JSOI2009-等差数列/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [JSOI2009]等差数列
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/15/平衡树被虐笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">平衡树被虐笔记</div>
+    <a href="/2019/02/28/Taduro的一些数学知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Taduro的一些数学知识</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -312,7 +357,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些前置知识"><span class="toc-number">1.</span> <span class="toc-text">一些前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数论分块"><span class="toc-number">1.1.</span> <span class="toc-text">数论分块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BSGS及其扩展"><span class="toc-number">1.2.</span> <span class="toc-text">BSGS及其扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通BSGS"><span class="toc-number">1.2.1.</span> <span class="toc-text">普通BSGS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#困难情况"><span class="toc-number">1.2.2.</span> <span class="toc-text">困难情况</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数论函数基本知识"><span class="toc-number">1.3.</span> <span class="toc-text">数论函数基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#运算法则"><span class="toc-number">1.3.1.</span> <span class="toc-text">运算法则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#积性函数"><span class="toc-number">1.4.</span> <span class="toc-text">积性函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见的积性函数"><span class="toc-number">1.4.1.</span> <span class="toc-text">常见的积性函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#莫比乌斯反演"><span class="toc-number">2.</span> <span class="toc-text">莫比乌斯反演</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -378,13 +423,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/12/JSOI2009-等差数列/" title="上一篇: [JSOI2009]等差数列">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/01/15/平衡树被虐笔记/" title="下一篇: 平衡树被虐笔记">
+            <a href="/2019/02/28/Taduro的一些数学知识/" title="下一篇: Taduro的一些数学知识">
                 <i class="fa fa-angle-right"></i>
             </a>
         
