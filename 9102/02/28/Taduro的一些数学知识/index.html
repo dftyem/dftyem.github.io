@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-13T08:16:23.721Z">
+<meta property="og:updated_time" content="2019-03-13T14:00:38.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Taduro的一些数学知识">
 <meta name="twitter:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？">
@@ -124,6 +124,8 @@
                         
                             <li><a href="/about">留言打卡</a></li>
                         
+                            <li><a href="/truedogshit">潮语</a></li>
+                        
                         </ul>
                     </nav>
                     <nav class="header-nav">
@@ -213,6 +215,8 @@
                 
                     <li><a href="/about">留言打卡</a></li>
                 
+                    <li><a href="/truedogshit">潮语</a></li>
+                
                 <div class="clearfix"></div>
                 </ul>
             </nav>
@@ -298,17 +302,10 @@
 <p>定义：</p>
 <p>积性函数：对于<strong>任意互质的整数</strong>a和b有性质f(ab)=f(a)f(b)的数论函数。</p>
 <p>完全积性函数：对于<strong>任意整数</strong>a和b有性质f(ab)=f(a)f(b)的数论函数。  </p>
-<h4 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数"></a>常见的积性函数</h4><p>$μ(n)$：莫比乌斯函数<br>$φ(n)$：欧拉函数<br>$d(n)$：一个数n的约数个数<br>$σ(n)$：一个数n的约数和</p>
+<h4 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数"></a>常见的积性函数</h4><p>$μ(n)$：莫比乌斯函数<br>$φ(n)$：欧拉函数<br>$d(n)$：一个数n的约数个数<br>$σ(n)​$：一个数n的约数和</p>
 <p>$1(n)=1$：恒等函数</p>
 <p>$id(n)=n$：单位函数</p>
 <p>$e(n)=[n==1]$：元函数</p>
-<blockquote>
-<p>upd:</p>
-<p>$μ*1=e$</p>
-<p>$μ*id=φ$，也就是： $\sum_{d|n}μ(d)\times\frac{n}{d}=φ(n)$</p>
-<p>$φ*1=id$，也就是：$\sum_{d|n}φ(d)=n$</p>
-<p>涨了一波知识</p>
-</blockquote>
 <p>两个积性函数的卷积也是积性函数。</p>
 <p>众所周知，积性函数有一个重要的性质：$f(i\times j)=f(i)\times f(j)(gcd(i,j)=1)$</p>
 <p>求积性函数可以线性筛（杜教筛和Min_25先咕掉）</p>
@@ -328,7 +325,20 @@
 <p>3.遇到两个变量都是自己推出来的可以选择枚举他们的乘积（我猜没人看得懂）</p>
 <p>4.为什么我不会用反演公式啊。。。</p>
 <h2 id="杜教筛"><a href="#杜教筛" class="headerlink" title="杜教筛"></a>杜教筛</h2><p><del>主要是反演不想写学习笔记</del></p>
-<p>会写的</p>
+<p>诶你看我不是鸽子吧。。。</p>
+<p>杜教筛是用来单次$O(n^\frac{2}{3})$求积性函数前缀和的一种神仙做法，之所以一开始就把时间复杂度说出来是因为我不会证。</p>
+<p>以$\mu$为例：求$\sum_{i=1}^n\mu(i)$，不让你$o(n)$做</p>
+<p>设$s(n)=\sum_{i=1}^n\mu(i)$</p>
+<p>我们要找一个积性函数$g(x)$，把他跟$\mu$卷一下记为h(x)。<br>$$<br>h(n)=\sum_{d|n}g(d)\mu(n/d)<br>$$<br>求一下这个卷积的前缀和<br>$$<br>\sum_{i=1}^nh(i)=\sum_{i=1}^n\sum_{d|i}g(d)\mu(i/d)\<br>=\sum_{d=1}^ng(d)\sum_{i=1}^{n/d}\mu(i)\<br>=\sum_{d=1}^ng(d)s(n/d)<br>$$<br>g是个积性函数，所以g(1)=1</p>
+<p>那么重点来了<br>$$<br>g(1)s(n)=\sum_{i=1}^nh(i)-\sum_{d=2}^ng(d)s(n/d)<br>$$<br>完了，如果我们能很快的求h(i)的前缀和和g(d)，就可以递归求出s(n)。</p>
+<p>对于$\mu$来说，因为$μ*1=e$，所以g取1。</p>
+<p>其实一般杜教筛的时候n都比较大，所以要求o(1)求g(d)，g一般是常函数$e,1,id$什么的，或者是他们的次幂，除去特殊情况不超过3次幂。</p>
+<p>奇技淫巧：如果特殊情况g可以取一个也能杜教筛的函数，据神犇wzx说复杂度不变？？？</p>
+<blockquote>
+<p>一些小知识（会更新）：</p>
+<p>$μ*id=φ$，也就是： $\sum_{d|n}μ(d)\times\frac{n}{d}=φ(n)$</p>
+<p>$φ*1=id$，也就是：$\sum_{d|n}φ(d)=n$ （就是用这个筛$\phi$，g取1，可以自己试试）</p>
+</blockquote>
 
       
       
@@ -341,7 +351,7 @@
         <p><span>本文标题:</span><a href="/9102/02/28/Taduro的一些数学知识/">Taduro的一些数学知识</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年02月28日 - 21时23分</p>
-        <p><span>最后更新:</span>2019年03月13日 - 16时16分</p>
+        <p><span>最后更新:</span>2019年03月13日 - 22时00分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/02/28/Taduro的一些数学知识/" title="Taduro的一些数学知识">http://dftyem.github.io/9102/02/28/Taduro的一些数学知识/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/02/28/Taduro的一些数学知识/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
