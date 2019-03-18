@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="这是一篇更新日志。 在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。  2018-12-10      在$zjf$的帮助下，$blog$建成。 2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。 2018-12-23    决定正式开始使用$blog$ 2018-12-26    开始写这篇更新日志。 2019-3-17">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T10:58:16.033Z">
+<meta property="og:updated_time" content="2019-03-18T05:02:31.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新日志">
 <meta name="twitter:description" content="这是一篇更新日志。 在2018年12月26日开始更新，希望能够记录博主和这个$blog$的成长 。  2018-12-10      在$zjf$的帮助下，$blog$建成。 2018-12-11    将以前$blog$中的文章搬了过来，有了$10$篇文章。 2018-12-23    决定正式开始使用$blog$ 2018-12-26    开始写这篇更新日志。 2019-3-17">
@@ -256,7 +256,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">120字</span>
+        <span class="post-count">143字</span>
       </span>
     </span>
 
@@ -327,6 +327,7 @@
 <li>2018-12-23    决定正式开始使用$blog$</li>
 <li>2018-12-26    开始写这篇更新日志。</li>
 <li>2019-3-17          终于，为blog配置好了评论系统，使用的是来必力(好久没写更新日志了)</li>
+<li>2019-3-18          参考<a href="https://blog.csdn.net/qq_36759224/article/details/85010191" target="_blank" rel="noopener">这个</a>为blog配置了字数、阅读时长和运行时间</li>
 </ul>
 
       
@@ -419,6 +420,23 @@
         
     </div>
 </footer>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
 
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
