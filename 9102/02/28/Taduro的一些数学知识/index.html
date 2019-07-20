@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？ 2019/7/7 update:更新辣！！！加入了数数的内容！！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T08:23:45.183Z">
+<meta property="og:updated_time" content="2019-07-18T12:49:15.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Taduro的一些数学知识">
 <meta name="twitter:description" content="听说学数学对身体好。 为了强身健体，我开始学习数学。这里会更一些数学知识。 其他的东西要不要也写一个知识点汇总呢？ 2019/7/7 update:更新辣！！！加入了数数的内容！！！">
@@ -153,7 +153,7 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://stevebraveman.github.io/">steve_braveman</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://stevebraveman.github.io/">riverfun</a>
                     
                       <a target="_blank" class="main-nav-link switch-friends-link" href="https://hachimanjy.github.io/">hackjy</a>
                     
@@ -163,17 +163,19 @@
                     
                       <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/shzr/">shzr</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/asuldb">asuldb</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/asuldb">鳖asuldb</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://ctz45562.github.io/">ctz</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://ctz45562.github.io/">蟹ctz</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://wavwing.top/">wavwing</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://wavwing.top/">指挥</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/ZUTTER/">ZUTTER_</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/ZUTTER/">组特</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/snowy2002/">snowy</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.cnblogs.com/snowy2002/">五星snowy</a>
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.luogu.org/blog/66965/#">Juan_feng</a>
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.luogu.org/blog/66965/#">块</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://geiz-revive.github.io/">Genius_zhouer</a>
                     
                     </div>
                 </section>
@@ -308,7 +310,7 @@
 <h3 id="BSGS及其扩展"><a href="#BSGS及其扩展" class="headerlink" title="BSGS及其扩展"></a>BSGS及其扩展</h3><p>求$y^{x}=z(mod\ p)$，给你y,z,p求最小的正整数x。</p>
 <h4 id="普通BSGS"><a href="#普通BSGS" class="headerlink" title="普通BSGS"></a>普通BSGS</h4><p>保证$gcd(y,p)=1$，用分块思想优化暴力</p>
 <p>设$x=a\times m-b$ 那么 $y^{a\times m}=z\times y^b(mod\ p)$</p>
-<p>可以枚举b，把$z\times y^b​$用哈希存起来，之后枚举a，查表看看有没有对应的b，因为y和p互质，所以并没有什么问题。可以看出$m=\sqrt{p}​$时复杂度是最优的。</p>
+<p>可以枚举b，把$z\times y^b$用哈希存起来，之后枚举a，查表看看有没有对应的b，因为y和p互质，所以并没有什么问题。可以看出$m=\sqrt{p}$时复杂度是最优的。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">BSGS</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (y%p==<span class="number">0</span>)&#123;<span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>); <span class="keyword">return</span>;&#125;</span><br><span class="line">    y%=p; z%=p; <span class="keyword">if</span> (z==<span class="number">1</span>)&#123;<span class="built_in">puts</span>(<span class="string">"0"</span>); <span class="keyword">return</span>;&#125;</span><br><span class="line">    ll m=<span class="built_in">sqrt</span>(p)+<span class="number">1</span>,sq=z; cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">0</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;m; i++)&#123;</span><br><span class="line">        add(sq%mod,i,sq);</span><br><span class="line">        sq=sq*y%p;</span><br><span class="line">    &#125;</span><br><span class="line">    sq=ksm(y,m);ll sum=sq;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=m; i++)&#123;</span><br><span class="line">        ll u=query(sum);</span><br><span class="line">        <span class="keyword">if</span> (u!=<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,i*m-u);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum=sum*sq%p;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"Orz, I cannot find x!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="困难情况"><a href="#困难情况" class="headerlink" title="困难情况"></a>困难情况</h4><p>如果$gcd(y,p)=d$呢？</p>
 <p>把方程变成$y^x+kp=z$，高次同余方程和一般的一样，要求$gcd(y,p)|z$。可以不断出掉d，最终使y和p互质。</p>
@@ -394,7 +396,7 @@
 <p>先考虑至多k种颜色$g_k$，那么第一个格子有k种填法，其他n-1个格子有k-1种填法，所以：<br>$$<br>g_k=k\times (k-1)^{n-1}=\sum_{i=0}^kC^i_kf_i<br>$$<br>要求的是$f_m$，用上面的式子带进去：<br>$$<br>f_m=\sum_{i=0}^m(-1)^{m-i}C^{i}_{m}g_i<br>$$</p>
 <p>$$<br>=\sum_{i=0}^m(-1)^{m-i}C^i_m\times i\times (i-1)^{n-1}<br>$$</p>
 <h2 id="组合计数"><a href="#组合计数" class="headerlink" title="组合计数"></a>组合计数</h2><p>emmm这里有一些化式子技巧吗？</p>
-<h3 id="范德蒙恒等式"><a href="#范德蒙恒等式" class="headerlink" title="范德蒙恒等式"></a>范德蒙恒等式</h3><p>长这样：<br>$$<br>\sum_{i=0}^kC^i_nC^{k-i}<em>m=C^k</em>{n+m}(k&lt;=min(n,m))<br>$$</p>
+<h3 id="范德蒙恒等式"><a href="#范德蒙恒等式" class="headerlink" title="范德蒙恒等式"></a>范德蒙恒等式</h3><p>长这样：<br>$\sum_{i=0}^kC^i_nC^{k-i}<em>m$=$C^k</em>{n+m}(k&lt;=min(n,m))$</p>
 <p>有时候有惊喜，可以消去一个求和号。</p>
 <p>考虑它的组合意义证明（转自<a href="https://blog.csdn.net/acdreamers/article/details/31032763" target="_blank" rel="noopener">acdreamers</a>）</p>
 <p>甲班有n个人，乙班有m个人，从两个班中选$k(k&lt;=min(n,m))$个人有$C^{k}<em>{n+m}$种选法，换一种方法，枚举从甲班中选$i$个人，从乙班中选$k-i$个，方案数是$\sum</em>{i=0}^kC^i_nC^{k-i}_m$，所以他们是相等的。</p>
@@ -424,7 +426,7 @@
         <p><span>本文标题:</span><a href="/9102/02/28/Taduro的一些数学知识/">Taduro的一些数学知识</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年02月28日 - 21时23分</p>
-        <p><span>最后更新:</span>2019年07月17日 - 16时23分</p>
+        <p><span>最后更新:</span>2019年07月18日 - 20时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/02/28/Taduro的一些数学知识/" title="Taduro的一些数学知识">http://dftyem.github.io/9102/02/28/Taduro的一些数学知识/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/02/28/Taduro的一些数学知识/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
