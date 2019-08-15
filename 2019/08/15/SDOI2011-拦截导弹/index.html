@@ -5,18 +5,18 @@
   
   <title>[SDOI2011]拦截导弹 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="肝了半个下午+半个晚上 传送门 提供一篇k-d tree题解。 首先第一问就是裸的三维偏序，还给你排好序消去了一维。 那么在k-d tree中加一个横纵坐标都是无限大的点做起点，这个点的答案是0，方案数是1（后面反着做的时候要加一个横纵坐标都是无限小的点）。之后用k-d tree模拟就好了。注意要在k-d tree中维护当前矩形的答案和方案数、当前点的答案和方案数。我的写法是先把所有点去重后都加进">
+  <meta name="description" content="肝了半个下午+半个晚上 传送门">
 <meta name="keywords" content="DP,k-d tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[SDOI2011]拦截导弹">
 <meta property="og:url" content="http://dftyem.github.io/2019/08/15/SDOI2011-拦截导弹/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="肝了半个下午+半个晚上 传送门 提供一篇k-d tree题解。 首先第一问就是裸的三维偏序，还给你排好序消去了一维。 那么在k-d tree中加一个横纵坐标都是无限大的点做起点，这个点的答案是0，方案数是1（后面反着做的时候要加一个横纵坐标都是无限小的点）。之后用k-d tree模拟就好了。注意要在k-d tree中维护当前矩形的答案和方案数、当前点的答案和方案数。我的写法是先把所有点去重后都加进">
+<meta property="og:description" content="肝了半个下午+半个晚上 传送门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-15T12:55:32.229Z">
+<meta property="og:updated_time" content="2019-08-15T12:59:19.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[SDOI2011]拦截导弹">
-<meta name="twitter:description" content="肝了半个下午+半个晚上 传送门 提供一篇k-d tree题解。 首先第一问就是裸的三维偏序，还给你排好序消去了一维。 那么在k-d tree中加一个横纵坐标都是无限大的点做起点，这个点的答案是0，方案数是1（后面反着做的时候要加一个横纵坐标都是无限小的点）。之后用k-d tree模拟就好了。注意要在k-d tree中维护当前矩形的答案和方案数、当前点的答案和方案数。我的写法是先把所有点去重后都加进">
+<meta name="twitter:description" content="肝了半个下午+半个晚上 传送门">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -301,6 +301,7 @@
           
         <p>肝了半个下午+半个晚上</p>
 <p><a href="https://lydsy.com/JudgeOnline/problem.php?id=2244" target="_blank" rel="noopener">传送门</a></p>
+<a id="more"></a>
 <p>提供一篇k-d tree题解。</p>
 <p>首先第一问就是裸的三维偏序，还给你排好序消去了一维。</p>
 <p>那么在k-d tree中加一个横纵坐标都是无限大的点做起点，这个点的答案是0，方案数是1（后面反着做的时候要加一个横纵坐标都是无限小的点）。之后用k-d tree模拟就好了。注意要在k-d tree中维护当前矩形的答案和方案数、当前点的答案和方案数。我的写法是先把所有点去重后都加进k-d tree里，所以要维护每个点是否被激活，这种做法比插入节点定期重构快。</p>
@@ -323,7 +324,7 @@
         <p><span>本文标题:</span><a href="/2019/08/15/SDOI2011-拦截导弹/">[SDOI2011]拦截导弹</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>2019年08月15日 - 20时23分</p>
-        <p><span>最后更新:</span>2019年08月15日 - 20时55分</p>
+        <p><span>最后更新:</span>2019年08月15日 - 20时59分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/08/15/SDOI2011-拦截导弹/" title="[SDOI2011]拦截导弹">http://dftyem.github.io/2019/08/15/SDOI2011-拦截导弹/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/08/15/SDOI2011-拦截导弹/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
