@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>CF914E Palindromes in a Tree | Taduro の blog</title>
+  <title>决策单调性dp学习笔记 | Taduro の blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做这题时智商下线，掰着手指数’a’到’t’有多少个字母都数错了。真是狗屎。 顺便重学了点分治？ 传送门">
-<meta name="keywords" content="点分治,状态压缩">
+  <meta name="description" content="把标签连起来念就是标题。（模仿成爷） 这是一个很有用但不出名的算法。 网上教学很少，我需要一篇学习笔记来防止自己忘了。 这篇文章记录了决策单调性dp的两种写法以及例题。">
+<meta name="keywords" content="学习笔记,决策单调性,dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF914E Palindromes in a Tree">
-<meta property="og:url" content="http://dftyem.github.io/2019/04/01/CF914E-Palindromes-in-a-Tree/index.html">
+<meta property="og:title" content="决策单调性dp学习笔记">
+<meta property="og:url" content="http://dftyem.github.io/2019/09/08/决策单调性dp学习笔记/index.html">
 <meta property="og:site_name" content="Taduro の blog">
-<meta property="og:description" content="做这题时智商下线，掰着手指数’a’到’t’有多少个字母都数错了。真是狗屎。 顺便重学了点分治？ 传送门">
+<meta property="og:description" content="把标签连起来念就是标题。（模仿成爷） 这是一个很有用但不出名的算法。 网上教学很少，我需要一篇学习笔记来防止自己忘了。 这篇文章记录了决策单调性dp的两种写法以及例题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-01T12:40:00.812Z">
+<meta property="og:updated_time" content="2019-09-09T12:23:45.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CF914E Palindromes in a Tree">
-<meta name="twitter:description" content="做这题时智商下线，掰着手指数’a’到’t’有多少个字母都数错了。真是狗屎。 顺便重学了点分治？ 传送门">
+<meta name="twitter:title" content="决策单调性dp学习笔记">
+<meta name="twitter:description" content="把标签连起来念就是标题。（模仿成爷） 这是一个很有用但不出名的算法。 网上教学很少，我需要一篇学习笔记来防止自己忘了。 这篇文章记录了决策单调性dp的两种写法以及例题。">
   
     <link rel="alternative" href="/atom.xml" title="Taduro の blog" type="application/atom+xml">
   
@@ -285,11 +285,11 @@
     </div>
 </nav>
 
-      <div class="body-wrap"><article id="post-CF914E-Palindromes-in-a-Tree" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-决策单调性dp学习笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/01/CF914E-Palindromes-in-a-Tree/" class="article-date">
-      <time datetime="2019-04-01T12:16:26.000Z" itemprop="datePublished">2019-04-01</time>
+      <a href="/2019/09/08/决策单调性dp学习笔记/" class="article-date">
+      <time datetime="2019-09-08T13:27:34.000Z" itemprop="datePublished">2019-09-08</time>
 </a>
     </div>
   
@@ -302,7 +302,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CF914E Palindromes in a Tree
+      决策单调性dp学习笔记
     </h1>
   
 
@@ -312,7 +312,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">836字</span>
+        <span class="post-count">923字</span>
       </span>
     </span>
 
@@ -321,7 +321,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">4分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -334,7 +334,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/点分治/">点分治</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/状态压缩/">状态压缩</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/决策单调性/">决策单调性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -344,15 +344,38 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>做这题时智商下线，掰着手指数’a’到’t’有多少个字母都数错了。<del>真是狗屎。</del></p>
-<p>顺便重学了点分治？</p>
-<p><a href="https://www.luogu.org/problemnew/show/CF914E" target="_blank" rel="noopener">传送门</a></p>
+        <p>把标签连起来念就是标题。（模仿成爷）</p>
+<p>这是一个很有用但不出名的算法。</p>
+<p>网上教学很少，我需要一篇学习笔记来防止自己忘了。</p>
+<p>这篇文章记录了决策单调性dp的两种写法以及例题。</p>
 <a id="more"></a>
-<p>首先虽然这个题说的很不清楚，但它的回文串和我们一般说的回文串是不一样的，在这个题里，一个串是回文的当且仅当其中至多一个字母出现次数为奇数。同时，如果你不像我一样傻叉的话，你会发现’a’到’t’一共有19个字母。</p>
-<p>那么我们可以状压存一个串每个字母的奇偶性，然后上点分治。</p>
-<p>点分治的具体实现方法就是先把一个分治中心子树中所有串状压开个桶存下来，然后枚举每个子树，把其中的串在桶中删去。dfs这个子树计算贡献，由于问的是在回文串上点的个数，所以每次统计一个点要加上<strong>这次统计</strong>中这个点儿子的答案。这样分治中心会被$u-&gt;v$的路径和$v-&gt;u$的路径算两次，所以分治中心统计的时候除个2。以及单个字符也是个回文串，所以每个点的答案再加一。</p>
-<p>关于具体计数的实现见代码。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> next,to;</span><br><span class="line">&#125;w[<span class="number">400001</span>];</span><br><span class="line"><span class="keyword">int</span> size[<span class="number">200001</span>],head[<span class="number">200001</span>],vis[<span class="number">200001</span>];</span><br><span class="line"><span class="keyword">int</span> maxn[<span class="number">200001</span>],all,rt,a[<span class="number">200001</span>],n,cnt;</span><br><span class="line">ll o[<span class="number">1</span>&lt;&lt;<span class="number">20</span>],ans[<span class="number">200001</span>];</span><br><span class="line"><span class="keyword">char</span> ch[<span class="number">200001</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    w[++cnt].next=head[x];</span><br><span class="line">    w[cnt].to=y; head[x]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_rt</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    size[x]=<span class="number">1</span>; maxn[x]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)&#123;</span><br><span class="line">        <span class="keyword">if</span> (w[i].to!=fa&amp;&amp;!vis[w[i].to])&#123;</span><br><span class="line">            get_rt(w[i].to,x);</span><br><span class="line">            size[x]+=size[w[i].to];</span><br><span class="line">            maxn[x]=max(maxn[x],size[w[i].to]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    maxn[x]=max(maxn[x],all-size[x]);</span><br><span class="line">    <span class="keyword">if</span> (maxn[x]&lt;maxn[rt]) rt=x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> fa,<span class="keyword">int</span> y,<span class="keyword">int</span> dis)</span></span>&#123;</span><br><span class="line">    dis^=(<span class="number">1</span>&lt;&lt;a[x]); o[dis]+=y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)</span><br><span class="line">        <span class="keyword">if</span> (w[i].to!=fa&amp;&amp;!vis[w[i].to])</span><br><span class="line">            dfs(w[i].to,x,y,dis);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">get_dis</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> fa,<span class="keyword">int</span> l)</span></span>&#123;</span><br><span class="line">    l^=(<span class="number">1</span>&lt;&lt;a[x]); ll num=o[l];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=<span class="number">19</span>; i++) num+=o[l^(<span class="number">1</span>&lt;&lt;i)];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)&#123;</span><br><span class="line">        <span class="keyword">if</span> (w[i].to!=fa&amp;&amp;!vis[w[i].to])&#123;</span><br><span class="line">            num+=get_dis(w[i].to,x,l);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans[x]+=num;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    vis[x]=<span class="number">1</span>;</span><br><span class="line">    dfs(x,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="comment">// for (int i=head[x]; i; i=w[i].next)&#123;</span></span><br><span class="line">    <span class="comment">// 	if (vis[w[i].to]) continue;</span></span><br><span class="line">    <span class="comment">// 	dfs(w[i].to,x,1,1&lt;&lt;a[w[i].to]);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    ll num=o[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=<span class="number">19</span>; i++) num+=o[<span class="number">1</span>&lt;&lt;i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)&#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[w[i].to]) <span class="keyword">continue</span>;</span><br><span class="line">        dfs(w[i].to,x,<span class="number">-1</span>,<span class="number">1</span>&lt;&lt;a[x]);</span><br><span class="line">        num+=get_dis(w[i].to,x,<span class="number">0</span>);</span><br><span class="line">        dfs(w[i].to,x,<span class="number">1</span>,<span class="number">1</span>&lt;&lt;a[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(x,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>); ans[x]+=num/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    calc(x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=head[x]; i; i=w[i].next)&#123;</span><br><span class="line">        <span class="keyword">if</span> (vis[w[i].to]) <span class="keyword">continue</span>;</span><br><span class="line">        rt=<span class="number">0</span>; all=size[w[i].to];</span><br><span class="line">        get_rt(w[i].to,<span class="number">0</span>); solve(rt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">        add(x,y); add(y,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,ch+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) a[i]=ch[i]-<span class="string">'a'</span>;</span><br><span class="line">    maxn[<span class="number">0</span>]=<span class="number">1e9</span>; all=n; get_rt(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    solve(rt);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) <span class="built_in">printf</span>(<span class="string">"%I64d "</span>,ans[i]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="什么是决策单调性优化"><a href="#什么是决策单调性优化" class="headerlink" title="什么是决策单调性优化"></a>什么是决策单调性优化</h3><p>顾名思义，就是利用dp时决策的单调性优化dp。</p>
+<p>似乎单调队列优化dpa和斜率优化dp都是决策单调性的一种，但这只是一篇关于普通决策单调性dp的学习笔记。</p>
+<h3 id="一些准备工作"><a href="#一些准备工作" class="headerlink" title="一些准备工作"></a>一些准备工作</h3><p>为了方便理解，我们把dp时每个决策看成一个函数。</p>
+<p>例如这个式子$f_i=min_{j=1}^{i-1}(f_j+w_{i,j})$，$w_{i,j}$的意义随题目内容所变化。</p>
+<p>我们在对i作出决策的时候，将前面的j看成一个函数，即$f_i=min_{j=1}^{i-1}g_j(i),g_j(i)=f_j+w_{i,j}$</p>
+<p>如果你发现对于任意两个函数$g_j$和$g_k$满足$j&lt;k$且$g_k$的增长速度比$g_j$快的话，你就证明了这个dp具有决策单调性。</p>
+<p><del>我们通常用写暴力打表代替这种证明</del></p>
+<h3 id="解决这种问题的方法"><a href="#解决这种问题的方法" class="headerlink" title="解决这种问题的方法"></a>解决这种问题的方法</h3><h4 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h4><p>发现每个$j$所控制的区间是递增且连续的，设决策j控制的区间是$[l_j,r_j]$，这些区间取并就是$[1,n]$，那么就可以开一个类似单调队列的东西维护这些决策区间。</p>
+<ol>
+<li><p>当一个决策$j$要进入队列时，它首先要和队尾决策比较，如果在$n$这个位置队尾决策都没有$j$优的话，显然这个决策永远都干不过$j$了，把他弹出直到队列为空或不满足条件。停止后进入2.，该让$j$进入队列了。</p>
+</li>
+<li><p>当一个决策进入队列时，如果队列为空，这个决策控制的区间就是$[1,n]$，结束。否则进入3.。</p>
+</li>
+<li><p>设队尾决策为$k$，说明$l_j\in[l_k+1,r_k]$，可以在这个范围里二分找到$l_j$的值，并更新$r_k$，$j$进队，$r_j=n$。结束。</p>
+</li>
+</ol>
+<p>那么我们完成了维护工作，更新答案就是取出队首的元素，如果当前$i$超出了队首元素的控制区间，就弹掉队首直到$i$可以被更新。</p>
+<p>这个做法的缺陷是必须能快速比较两个函数值的大小。</p>
+<p>例题：</p>
+<p><a href="https://www.luogu.org/problem/P3515" target="_blank" rel="noopener">[POI2011]Lightning Conductor</a></p>
+<p><a href="https://www.luogu.org/problem/P1912" target="_blank" rel="noopener">[NOI2009]诗人小G</a></p>
+<h4 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h4><p>分治做法非常的好写和容易理解，分治每一层求解一段区间$[l,r]$的解在$[x,y]$中的情况，之后暴力求出$[l,r]$中点$mid$的解，同时你也得到了$[l,mid-1]$和$[mid+1,r]$的解的范围，那么就得到了两个规模减半的小问题。</p>
+<p>复杂度分析的话，一共有$log\ n$层，每层加起来是$o(n)$，所以是$n\ log\ n$的。不过要注意的一点是，这个函数会被调用n次，所以如果$w_{i,j}$需要维护一个桶的话，每次清空桶复杂度是假的。这时候用莫队就非常好使，因为指针移动了$n\ log\  n$次，所以复杂度是对的。</p>
+<p>例题：</p>
+<p><a href="https://www.luogu.org/problem/CF868F" target="_blank" rel="noopener">CF868F Yet Another Minimization Problem</a></p>
+<h3 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h3><p>其实决策单调性优化dp的重点在于找到决策单调性，知道了这个之后剩下的基本是板子，这也是我只给出三个例题的原因，当你知道有决策单调性后，这些题就基本做完一半了。</p>
+<p>所以读者不妨自己证明下上面例题的单调性。</p>
 
       
       
@@ -362,13 +385,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/01/CF914E-Palindromes-in-a-Tree/">CF914E Palindromes in a Tree</a></p>
+        <p><span>本文标题:</span><a href="/2019/09/08/决策单调性dp学习笔记/">决策单调性dp学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
-        <p><span>发布时间:</span>2019年04月01日 - 20时16分</p>
-        <p><span>最后更新:</span>2019年04月01日 - 20时40分</p>
+        <p><span>发布时间:</span>2019年09月08日 - 21时27分</p>
+        <p><span>最后更新:</span>2019年09月09日 - 20时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/01/CF914E-Palindromes-in-a-Tree/" title="CF914E Palindromes in a Tree">http://dftyem.github.io/2019/04/01/CF914E-Palindromes-in-a-Tree/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/04/01/CF914E-Palindromes-in-a-Tree/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/08/决策单调性dp学习笔记/" title="决策单调性dp学习笔记">http://dftyem.github.io/2019/09/08/决策单调性dp学习笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/2019/09/08/决策单调性dp学习笔记/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -381,18 +404,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/04/11/SCOI2012-喵星球上的点名/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/9102/02/28/Taduro的一些数学知识/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          [SCOI2012]喵星球上的点名
+          Taduro的一些数学知识
         
       </div>
     </a>
   
   
-    <a href="/2019/03/19/luogu-P3987-我永远喜欢珂朵莉/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">luogu P3987 我永远喜欢珂朵莉~</div>
+    <a href="/2019/09/02/「LibreOJ-Round-6」花札/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「LibreOJ Round #6」花札</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -403,7 +426,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是决策单调性优化"><span class="toc-number">1.</span> <span class="toc-text">什么是决策单调性优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些准备工作"><span class="toc-number">2.</span> <span class="toc-text">一些准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决这种问题的方法"><span class="toc-number">3.</span> <span class="toc-text">解决这种问题的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二分"><span class="toc-number">3.1.</span> <span class="toc-text">二分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分治"><span class="toc-number">3.2.</span> <span class="toc-text">分治</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写在后面"><span class="toc-number">4.</span> <span class="toc-text">写在后面</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -473,13 +496,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/11/SCOI2012-喵星球上的点名/" title="上一篇: [SCOI2012]喵星球上的点名">
+            <a href="/9102/02/28/Taduro的一些数学知识/" title="上一篇: Taduro的一些数学知识">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/03/19/luogu-P3987-我永远喜欢珂朵莉/" title="下一篇: luogu P3987 我永远喜欢珂朵莉~">
+            <a href="/2019/09/02/「LibreOJ-Round-6」花札/" title="下一篇: 「LibreOJ Round #6」花札">
                 <i class="fa fa-angle-right"></i>
             </a>
         
