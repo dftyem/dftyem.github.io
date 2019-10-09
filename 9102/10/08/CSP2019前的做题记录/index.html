@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-08T13:12:56.112Z">
+<meta property="og:updated_time" content="2019-10-09T13:51:12.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSP2019前的做题记录">
 <meta name="twitter:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
@@ -266,7 +266,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">707字</span>
+        <span class="post-count">1.2k字</span>
       </span>
     </span>
 
@@ -275,7 +275,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">4分</span>
       </span>
     </span>
 </div>
@@ -317,7 +317,21 @@
 <p>使$[l,mid]$的数都不大于mid，$[mid+1,r]$的数都大于mid，这相当于给一个只有0和1的序列排序。可以分治，考虑先把$[l,mid]$和$[mid+1,r]$各自排好序，那这个序列的样子一定是这样：0 0 0 1 1 1 0 0 0 1 1 1 只要把中间的一堆0和一堆1换一下就好了，这有点像归并。</p>
 <p>这个做法的复杂度我也不会证，感觉挺对的，附上分治代码。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l==r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    merge(l,mid),merge(mid+<span class="number">1</span>,r);</span><br><span class="line">    <span class="keyword">int</span> lp=mid+<span class="number">1</span>,rp=mid;</span><br><span class="line">    <span class="keyword">while</span> (lp&gt;l&amp;&amp;b[lp<span class="number">-1</span>]) lp--;</span><br><span class="line">    <span class="keyword">while</span> (rp&lt;r&amp;&amp;!b[rp+<span class="number">1</span>]) rp++;</span><br><span class="line">    <span class="keyword">if</span> (lp&gt;=rp) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,lp,rp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=lp,j=rp; i&lt;=j; i++,j--)</span><br><span class="line">        swap(b[i],b[j]),swap(c[i],c[j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l==r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=l; i&lt;=r; i++) b[i]=(c[i]&gt;mid);</span><br><span class="line">    merge(l,r);</span><br><span class="line">    solve(l,mid); solve(mid+<span class="number">1</span>,r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>——————————–10月8号的分割线———————————–</p>
+<h2 id="平面最近点对问题"><a href="#平面最近点对问题" class="headerlink" title="平面最近点对问题"></a>平面最近点对问题</h2><p><a href="https://www.luogu.org/problem/P1429" target="_blank" rel="noopener">传送门</a></p>
+<p>平面分治思想的板子，按横坐标排序，分治时按中位数mid分到左边和右边，先递归下去得到两个子问题的答案，然后考虑现在这个问题。</p>
+<p>假设现在答案是dis，我们现在要找的是跨过$x=mid$这条直线且距离小于dis的点对，那么有可能用到的点的横坐标会在$[mid-dis,mid+dis]$。对于横坐标符合条件的一个点$a(x,y)$，能和a一起更新答案的点的纵坐标范围是$[y-dis,y+dis]$，按纵坐标排序暴力枚举点对即可。</p>
+<p>尝试证明这玩意的复杂度，失败了。</p>
+<h2 id="BJWC2011-最小三角形"><a href="#BJWC2011-最小三角形" class="headerlink" title="[BJWC2011]最小三角形"></a>[BJWC2011]最小三角形</h2><p><a href="https://www.luogu.org/problem/P4423" target="_blank" rel="noopener">传送门</a></p>
+<p>平面分治思想的应用，接着分治，把左右做完之后考虑拿一个矩形把最优三角形框进去，发现当当前最优三角形周长为dis时，最坏情况下就是那个三角形是条线，那么框它的最优矩形就是一个边长为$dis/2$的正方形，在这个正方形里暴力枚举好了。</p>
+<p>复杂度？这辈子都不可能证的。</p>
+<h2 id="COCI2015-Norma"><a href="#COCI2015-Norma" class="headerlink" title="[COCI2015]Norma"></a>[COCI2015]Norma</h2><p><a href="https://www.luogu.org/problem/SP22343" target="_blank" rel="noopener">传送门</a></p>
+<p>上午看这题的时候降智了。</p>
+<p>直接分治，考虑跨越区间中点的答案，由中间向左枚举左端点p，这样得到$[p,mid]$的最小值mi和最大值ma，之后维护向右最小值为mi和最大值为ma的最长长度mn和mx。</p>
+<p>假设$mn&lt;mx$，那么右边被分成三段。</p>
+<p>第一段$[mid+1,mn]$，答案是$mi\times ma\sum_{i=mid+1}^{mn}(i-p+1)$，维护自然数前缀和就好了。</p>
+<p>第二段$[mn+1,mx]$，答案是$ma\sum_{i=mn+1}^{mx}(i-p+1)\times minn[i]$，$minn[i]$表示$[mid+1,i]$的最小值，把$i-p+1$拆成$i-(p-1)$，维护$i\times minn[i]$和$minn[i]$的前缀和就好了。</p>
+<p>第三段$[mx+1,r]$，答案是我懒得写的式子，维护$minn[i]\times maxn[i]$和$i\times minn[i]\times maxn[i]$的前缀和就好了。</p>
+<h2 id="ZJOI2016-旅行者"><a href="#ZJOI2016-旅行者" class="headerlink" title="[ZJOI2016]旅行者"></a>[ZJOI2016]旅行者</h2><p>咕了明天再写。</p>
 
       
       
@@ -330,7 +344,7 @@
         <p><span>本文标题:</span><a href="/9102/10/08/CSP2019前的做题记录/">CSP2019前的做题记录</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年10月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年10月08日 - 21时12分</p>
+        <p><span>最后更新:</span>2019年10月09日 - 21时51分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/10/08/CSP2019前的做题记录/" title="CSP2019前的做题记录">http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -359,7 +373,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -515,7 +529,7 @@
 setInterval("createtime()",250);
 </script>
 <i class="fas fa-chart-area"></i>
-<span class="post-count">字数统计：71.7k</span>
+<span class="post-count">字数统计：72.2k</span>
 
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
