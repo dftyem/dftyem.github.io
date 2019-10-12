@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-10T12:36:59.073Z">
+<meta property="og:updated_time" content="2019-10-12T10:50:39.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSP2019前的做题记录">
 <meta name="twitter:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
@@ -266,7 +266,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.6k字</span>
+        <span class="post-count">2.7k字</span>
       </span>
     </span>
 
@@ -275,7 +275,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
+        <span class="post-count">10分</span>
       </span>
     </span>
 </div>
@@ -337,10 +337,46 @@
 <p>早上交的晚上都没测完，就当我A了，祝CF早日康复（雾）。</p>
 <p>考虑区间或和一定不小于最大值，可以减去区间或和等于最大值的区间个数，这个可以分治做，对每个点求出向左右第一个在二进制下不是它子集的位置，这个东西可以维护一下二进制下每一位当前最靠左或右的1的位置，之后枚举当前数的每一位，木桶原理一下（就是那个经常被用来批判你偏科的那个东西），然后求出最大值分治即可。</p>
 <p>（好像有一个小技巧的样子）</p>
+<p>10.11 update CF好了，但是垃圾洛谷把我代码弄没了，不可能重写的，就怪洛谷垃圾好了。</p>
 <h2 id="【UNR-2】积劳成疾"><a href="#【UNR-2】积劳成疾" class="headerlink" title="【UNR #2】积劳成疾"></a>【UNR #2】积劳成疾</h2><p><a href="http://uoj.ac/problem/311" target="_blank" rel="noopener">传送门</a></p>
 <p>伟大的wz恒带我做的，这是<a href="https://www.cnblogs.com/asuldb/p/11358621.html" target="_blank" rel="noopener">他的题解</a>。</p>
 <p>考虑分治，对区间$[l,r]$枚举其最大值和最大值的位置mid，之后分裂成$[l,mid-1]$和$[mid+1,r]$，这样复杂度是$O(n^4)$。</p>
 <p>这时候伟大的wz恒跳出来了，在对我实行例行嘲讽后伟大的wz恒说l和r没有什么用，只要记一下区间长度就好了，我聆听了伟大的wz恒的教诲，这样一个分治就变成记搜了。于是我就抄了伟大的wz恒的题解，而且完全看不懂正常的dp做法了。</p>
+<h2 id="HNOI2011-卡农"><a href="#HNOI2011-卡农" class="headerlink" title="[HNOI2011]卡农"></a>[HNOI2011]卡农</h2><p><a href="https://www.luogu.org/problem/P3214" target="_blank" rel="noopener">传送门</a></p>
+<p>题意其实是说，从$2^n-1$个数中无序选m个不同的数，使其异或和为0。</p>
+<p>设$f_i$表示有序的i个各不相同且非0的数，其异或和为0的方案数，那么答案就是$\frac{f_m}{m!}$。</p>
+<p>利用容斥转移，先考虑可以随便选，那么就是$f_i=A_{2^n-1}^{i-1}$，意思是前$i-1$个数随便选，第i个数自然就被确定了。</p>
+<p>考虑第i个数是0的情况，这样前$i-1$个数异或和自然是0，就是$f_{i-1}$。</p>
+<p>考虑有重复的情况，第i个数和前面$i-1$个数中任意一个相同，这样会有$i-2$个数异或和是0，还要枚举这个相同的值，所以是$(i-1)\times f_{i-2}\times (2^n-1-(i-2))$。</p>
+<p>所以转移方程是：<br>$$<br>f_i=A_{2^n-1}^{i-1}-f_{i-1}-(i-1)\times f_{i-2}\times (2^n-1-(i-2))<br>$$</p>
+<h2 id="CF1187E-Tree-Painting"><a href="#CF1187E-Tree-Painting" class="headerlink" title="CF1187E Tree Painting"></a>CF1187E Tree Painting</h2><p><a href="https://www.luogu.org/problem/CF1187E" target="_blank" rel="noopener">传送门</a></p>
+<p>复习(<del>重学</del>)一下换根dp。</p>
+<p>第一次dp：$f_i=size_i+\sum_{j\in son_x}f_j$</p>
+<p>第二次换根：$f_j=f_i-size_j\times 2+n$</p>
+<h2 id="APIO2014-连珠线"><a href="#APIO2014-连珠线" class="headerlink" title="[APIO2014]连珠线"></a>[APIO2014]连珠线</h2><p><a href="https://www.luogu.org/problem/P3647" target="_blank" rel="noopener">传送门</a></p>
+<p>真正的换根dp，上面那个太水了。</p>
+<p>考虑枚举根，那么所有的蓝边都是父-子-孙，对于每个根来说最优方法唯一。</p>
+<p>那么还是先dp一个根的答案，$f[i][0/1]$表示i是/不是两条蓝边中点时，i子树中的最大得分。</p>
+<p>那么$f_{i,0}=\sum_{j\in son_i}max(f_{j,0},f_{j,1}+w(i,j))$</p>
+<p>$f[i][1]$特殊一些，就是在$f[i][0]$的基础上，从儿子中选一个价值大的连上去。</p>
+<p>即$f_{i,1}=f_{i,0}+\max_{j\in son_i}(f_{j,0}+w(i,j)-max(f_{j,0},f_{j,1}+w(i,j)))$</p>
+<p>现在考虑换根，从一个父亲转移到儿子的时候要去掉这个儿子对父亲的影响，之后用父亲去更新儿子。</p>
+<p>不过这题的影响不是很好去，所以开一个vector记一下每个点没有哪个儿子时的答案，然后先用祖父更新没有这个儿子时的父亲，再用父亲更新儿子。</p>
+<p>感觉我实现得非常丑陋，多记了很多没用的东西，改天改一下吧（一定会咕）</p>
+<h2 id="SHOI2014-概率充电器"><a href="#SHOI2014-概率充电器" class="headerlink" title="[SHOI2014]概率充电器"></a>[SHOI2014]概率充电器</h2><p><a href="https://www.luogu.org/problem/P4284" target="_blank" rel="noopener">传送门</a></p>
+<p>由换根过度到期望，感觉期望好神仙啊。</p>
+<p>一个点可以被自己、儿子和爸爸点亮，这难以dp，不过如果确定一个根，那么根只会被儿子点亮，那就知道了根被点亮的的概率，枚举根就可以了。</p>
+<p>上面是一个$O(n^2)$做法，显然可以换根dp来优化它，不过要先考虑怎么求一个点只被自己和子树点亮的概率。</p>
+<p>思考一下发现不如求它不被点亮的概率，$f_i$表示i不被点亮的概率，有$f_i=(1-q_i)\times \Pi_{j\in son_i}(f_j\times p(i,j)+(1-p(i,j)))$。</p>
+<p>之后是一个简单的换根：设j是i的儿子，$g_j$表示j为根时不被点亮的概率$g_j=(1-q_j)\times(\frac{f_i\times p(i,j)}{p(i,j)\times f_j+(1-p(i,j))}+(1-p(i,j)))$</p>
+<p>就是把上面那个式子带进去。。。</p>
+<h2 id="HNOI2015-亚瑟王"><a href="#HNOI2015-亚瑟王" class="headerlink" title="[HNOI2015]亚瑟王"></a>[HNOI2015]亚瑟王</h2><p><a href="https://www.luogu.org/problem/P3239" target="_blank" rel="noopener">传送门</a></p>
+<p>永远魔高一丈的概率题（是开题顺序的问题吗？）</p>
+<p>期望的线性性：算出每张牌被打出的概率乘伤害=总伤害的期望</p>
+<p>然后考虑算每张牌被打出的概率，<del>不会算</del></p>
+<p>可以先求出在r轮中前i张牌用了j张的概率$f_{i,j}$，这样第i张牌最后被打出的概率就是$\sum_{j=0}^rf_{i-1,j}\times(1-(1-p_i)^{r-j})$，意思就是这张牌有j次因为前面的牌被发动而被跳过，这样它不被打出的概率就是$p_i^{r-j}$。</p>
+<p>那么考虑dp求$f_{i,j}$，这像极了组合数的求法。</p>
+<p>如果第i张牌不被打出，那么$f_{i,j}=f_{i-1,j}\times (1-p_i)^{r-j}$，否则$f_{i,j}=f_{i-1,j-1}\times (1-(1-p_i)^{r-j+1})$，就是第i张牌被打出了。  </p>
 
       
       
@@ -353,7 +389,7 @@
         <p><span>本文标题:</span><a href="/9102/10/08/CSP2019前的做题记录/">CSP2019前的做题记录</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年10月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年10月10日 - 20时36分</p>
+        <p><span>最后更新:</span>2019年10月12日 - 18时50分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/10/08/CSP2019前的做题记录/" title="CSP2019前的做题记录">http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -382,7 +418,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2011-卡农"><span class="toc-number">11.</span> <span class="toc-text">[HNOI2011]卡农</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1187E-Tree-Painting"><span class="toc-number">12.</span> <span class="toc-text">CF1187E Tree Painting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIO2014-连珠线"><span class="toc-number">13.</span> <span class="toc-text">[APIO2014]连珠线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHOI2014-概率充电器"><span class="toc-number">14.</span> <span class="toc-text">[SHOI2014]概率充电器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2015-亚瑟王"><span class="toc-number">15.</span> <span class="toc-text">[HNOI2015]亚瑟王</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -538,7 +574,7 @@
 setInterval("createtime()",250);
 </script>
 <i class="fas fa-chart-area"></i>
-<span class="post-count">字数统计：73.5k</span>
+<span class="post-count">字数统计：74.6k</span>
 
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
