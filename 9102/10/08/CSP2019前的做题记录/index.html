@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-12T10:50:39.388Z">
+<meta property="og:updated_time" content="2019-10-14T12:58:23.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSP2019前的做题记录">
 <meta name="twitter:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
@@ -266,7 +266,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.7k字</span>
+        <span class="post-count">2.9k字</span>
       </span>
     </span>
 
@@ -275,7 +275,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">10分</span>
+        <span class="post-count">11分</span>
       </span>
     </span>
 </div>
@@ -376,7 +376,16 @@
 <p>然后考虑算每张牌被打出的概率，<del>不会算</del></p>
 <p>可以先求出在r轮中前i张牌用了j张的概率$f_{i,j}$，这样第i张牌最后被打出的概率就是$\sum_{j=0}^rf_{i-1,j}\times(1-(1-p_i)^{r-j})$，意思就是这张牌有j次因为前面的牌被发动而被跳过，这样它不被打出的概率就是$p_i^{r-j}$。</p>
 <p>那么考虑dp求$f_{i,j}$，这像极了组合数的求法。</p>
-<p>如果第i张牌不被打出，那么$f_{i,j}=f_{i-1,j}\times (1-p_i)^{r-j}$，否则$f_{i,j}=f_{i-1,j-1}\times (1-(1-p_i)^{r-j+1})$，就是第i张牌被打出了。  </p>
+<p>如果第i张牌不被打出，那么$f_{i,j}=f_{i-1,j}\times (1-p_i)^{r-j}$，否则$f_{i,j}=f_{i-1,j-1}\times (1-(1-p_i)^{r-j+1})$，就是第i张牌被打出了。</p>
+<h2 id="CF1174E-Ehab-and-the-Expected-GCD-Problem"><a href="#CF1174E-Ehab-and-the-Expected-GCD-Problem" class="headerlink" title="CF1174E  Ehab and the Expected GCD Problem"></a>CF1174E  Ehab and the Expected GCD Problem</h2><p> <a href="https://www.luogu.org/problem/CF1174E" target="_blank" rel="noopener">传送门</a></p>
+<p>今天解锁了陪阿潮玩耍的正确方式(#_#)/~，更完这题题解我就去。</p>
+<p>最近开始搞模拟赛了，到晚上就会很无聊，查鳖的水表看到了国庆去ZR讲的一道题（鳖竟然没用当时讲的做法，怕不是掉线了）</p>
+<p>发现如果想让gcd变化尽量多，第一个数一定是$2^x3^y$的形式，任何大于3的质数都可以被2的多次幂取代，同时3的平方可以被2的立方取代，所以$y\in {0,1}$。</p>
+<p>于是可以dp，$f[i][j][k]$表示前i个数，gcd为$2^j3^k$的方案数，转移只有三种可能：</p>
+<p>gcd不变：有$2^j3^k$的倍数个数可以选，其中前面已经选了$i-1$个</p>
+<p>$j-1$：有$2^{j-1}3^k$的倍数个数可以选，但不能选$2^j3^k$的倍数</p>
+<p>$k-1$：同$j-1$的情况</p>
+<p>滚动第一维转移就好了。</p>
 
       
       
@@ -389,7 +398,7 @@
         <p><span>本文标题:</span><a href="/9102/10/08/CSP2019前的做题记录/">CSP2019前的做题记录</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年10月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年10月12日 - 18时50分</p>
+        <p><span>最后更新:</span>2019年10月14日 - 20时58分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/10/08/CSP2019前的做题记录/" title="CSP2019前的做题记录">http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -418,7 +427,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2011-卡农"><span class="toc-number">11.</span> <span class="toc-text">[HNOI2011]卡农</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1187E-Tree-Painting"><span class="toc-number">12.</span> <span class="toc-text">CF1187E Tree Painting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIO2014-连珠线"><span class="toc-number">13.</span> <span class="toc-text">[APIO2014]连珠线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHOI2014-概率充电器"><span class="toc-number">14.</span> <span class="toc-text">[SHOI2014]概率充电器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2015-亚瑟王"><span class="toc-number">15.</span> <span class="toc-text">[HNOI2015]亚瑟王</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2011-卡农"><span class="toc-number">11.</span> <span class="toc-text">[HNOI2011]卡农</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1187E-Tree-Painting"><span class="toc-number">12.</span> <span class="toc-text">CF1187E Tree Painting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIO2014-连珠线"><span class="toc-number">13.</span> <span class="toc-text">[APIO2014]连珠线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHOI2014-概率充电器"><span class="toc-number">14.</span> <span class="toc-text">[SHOI2014]概率充电器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2015-亚瑟王"><span class="toc-number">15.</span> <span class="toc-text">[HNOI2015]亚瑟王</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1174E-Ehab-and-the-Expected-GCD-Problem"><span class="toc-number">16.</span> <span class="toc-text">CF1174E  Ehab and the Expected GCD Problem</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -574,7 +583,7 @@
 setInterval("createtime()",250);
 </script>
 <i class="fas fa-chart-area"></i>
-<span class="post-count">字数统计：74.6k</span>
+<span class="post-count">字数统计：74.9k</span>
 
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
