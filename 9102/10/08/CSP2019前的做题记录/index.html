@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Taduro の blog">
 <meta property="og:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-23T13:57:42.086Z">
+<meta property="og:updated_time" content="2019-11-04T12:42:23.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSP2019前的做题记录">
 <meta name="twitter:description" content="做一个高产的人（不存在的） 说不定哪天就咕了">
@@ -266,7 +266,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">3.4k字</span>
+        <span class="post-count">3.7k字</span>
       </span>
     </span>
 
@@ -275,7 +275,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">13分</span>
+        <span class="post-count">14分</span>
       </span>
     </span>
 </div>
@@ -400,6 +400,22 @@
 <p>大水题，状压dp，$f[i][j]$表示集合为i最后一个为j的方案数，预处理一下两点间的点集就可以dp了。</p>
 <p>复杂度啊虽然看起来不大对但跟我有什么关系呢？</p>
 <p>颓啊颓啊颓啊颓啊~~</p>
+<p>2019/11/4：打算重新更了，可是多出来了好多题，怎么办啊。。。</p>
+<h2 id="CF449D-Jzzhu-and-Numbers"><a href="#CF449D-Jzzhu-and-Numbers" class="headerlink" title="CF449D Jzzhu and Numbers"></a>CF449D Jzzhu and Numbers</h2><p><a href="https://www.luogu.org/problem/CF449D" target="_blank" rel="noopener">传送门</a></p>
+<p>高维前缀和，学的不是那么明白，以后会填坑的。</p>
+<p>$f_s$表示子集含s的方案数，这是个前缀和的形式，需要做一个高维前缀和来得到。</p>
+<p>高维前缀和的做法就是把每一维单独加进去，很仙就是了，有了f就可以容斥做完了。</p>
+<p><del>果然学不进去新东西</del></p>
+<h2 id="SDOI2009-学校食堂"><a href="#SDOI2009-学校食堂" class="headerlink" title="[SDOI2009]学校食堂"></a>[SDOI2009]学校食堂</h2><p><a href="https://www.luogu.org/problem/P2157" target="_blank" rel="noopener">传送门</a></p>
+<p>太仙了不大会的样子。。。</p>
+<p>状压每个人后面8个人的状态，记一下上一个做菜的人，顺序dp，枚举当前给谁做菜，在合法的前提下转移，$f_{i,j,k}$表示到第i人，状态为j，上一个是第$i+k$个人的最小时间，i能转移到i+1的条件是$i\in j$。</p>
+<p>滥竽充数的题解。</p>
+<h2 id="HNOI2010-公交线路"><a href="#HNOI2010-公交线路" class="headerlink" title="[HNOI2010]公交线路"></a>[HNOI2010]公交线路</h2><p><a href="https://www.luogu.org/problem/P3204" target="_blank" rel="noopener">传送门</a></p>
+<p>状压+矩乘</p>
+<p>$f_{i,j}$表示最慢的车到了i，i前面p个位置的覆盖状况是j的方案数（如果j中一个位置是1表示这里是某辆车的最后的停靠站），对j的要求是其中必须有k个1且第一位必须是1，这样的j不多，然后就可以矩乘。</p>
+<p>构造转移矩阵：忘了（！！！）</p>
+<p>￥$%&amp;#=！＠＃＾——Ｄｖｃ（）</p>
+<p>这个更博的人心态炸了，今天就到这里了。</p>
 
       
       
@@ -412,7 +428,7 @@
         <p><span>本文标题:</span><a href="/9102/10/08/CSP2019前的做题记录/">CSP2019前的做题记录</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Taduro 的个人博客">Taduro</a></p>
         <p><span>发布时间:</span>9102年10月08日 - 20时40分</p>
-        <p><span>最后更新:</span>2019年10月23日 - 21时57分</p>
+        <p><span>最后更新:</span>2019年11月04日 - 20时42分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/9102/10/08/CSP2019前的做题记录/" title="CSP2019前的做题记录">http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/</a>
             <span class="copy-path" data-clipboard-text="原文: http://dftyem.github.io/9102/10/08/CSP2019前的做题记录/　　作者: Taduro" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -441,7 +457,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2011-卡农"><span class="toc-number">11.</span> <span class="toc-text">[HNOI2011]卡农</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1187E-Tree-Painting"><span class="toc-number">12.</span> <span class="toc-text">CF1187E Tree Painting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIO2014-连珠线"><span class="toc-number">13.</span> <span class="toc-text">[APIO2014]连珠线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHOI2014-概率充电器"><span class="toc-number">14.</span> <span class="toc-text">[SHOI2014]概率充电器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2015-亚瑟王"><span class="toc-number">15.</span> <span class="toc-text">[HNOI2015]亚瑟王</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1174E-Ehab-and-the-Expected-GCD-Problem"><span class="toc-number">16.</span> <span class="toc-text">CF1174E  Ehab and the Expected GCD Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF213E-Two-Permutations"><span class="toc-number">17.</span> <span class="toc-text">CF213E Two Permutations</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#以上是我有干劲且四肢健全的时候做的题目，下面是颓废时的划水清单。"><span class="toc-number"></span> <span class="toc-text">以上是我有干劲且四肢健全的时候做的题目，下面是颓废时的划水清单。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ynoi2011-D1T2"><span class="toc-number">1.</span> <span class="toc-text">[Ynoi2011]D1T2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清华集训2017-小Y和地铁"><span class="toc-number">2.</span> <span class="toc-text">[清华集训2017 小Y和地铁]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CQOI2018-解锁屏幕"><span class="toc-number">3.</span> <span class="toc-text">[CQOI2018]解锁屏幕</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HEOI2015-兔子与樱花"><span class="toc-number">1.</span> <span class="toc-text">[HEOI2015]兔子与樱花</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4755-Beautiful-Pair"><span class="toc-number">2.</span> <span class="toc-text">Luogu P4755 Beautiful Pair</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Luogu-P4852-yyf-hates-choukapai"><span class="toc-number">3.</span> <span class="toc-text">Luogu P4852 yyf hates choukapai</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NOIAC32-Sort"><span class="toc-number">4.</span> <span class="toc-text">NOIAC32 Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平面最近点对问题"><span class="toc-number">5.</span> <span class="toc-text">平面最近点对问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BJWC2011-最小三角形"><span class="toc-number">6.</span> <span class="toc-text">[BJWC2011]最小三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COCI2015-Norma"><span class="toc-number">7.</span> <span class="toc-text">[COCI2015]Norma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZJOI2016-旅行者"><span class="toc-number">8.</span> <span class="toc-text">[ZJOI2016]旅行者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF875D-High-Cry"><span class="toc-number">9.</span> <span class="toc-text">CF875D High Cry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#【UNR-2】积劳成疾"><span class="toc-number">10.</span> <span class="toc-text">【UNR #2】积劳成疾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2011-卡农"><span class="toc-number">11.</span> <span class="toc-text">[HNOI2011]卡农</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1187E-Tree-Painting"><span class="toc-number">12.</span> <span class="toc-text">CF1187E Tree Painting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIO2014-连珠线"><span class="toc-number">13.</span> <span class="toc-text">[APIO2014]连珠线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHOI2014-概率充电器"><span class="toc-number">14.</span> <span class="toc-text">[SHOI2014]概率充电器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2015-亚瑟王"><span class="toc-number">15.</span> <span class="toc-text">[HNOI2015]亚瑟王</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF1174E-Ehab-and-the-Expected-GCD-Problem"><span class="toc-number">16.</span> <span class="toc-text">CF1174E  Ehab and the Expected GCD Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF213E-Two-Permutations"><span class="toc-number">17.</span> <span class="toc-text">CF213E Two Permutations</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#以上是我有干劲且四肢健全的时候做的题目，下面是颓废时的划水清单。"><span class="toc-number"></span> <span class="toc-text">以上是我有干劲且四肢健全的时候做的题目，下面是颓废时的划水清单。</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ynoi2011-D1T2"><span class="toc-number">1.</span> <span class="toc-text">[Ynoi2011]D1T2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清华集训2017-小Y和地铁"><span class="toc-number">2.</span> <span class="toc-text">[清华集训2017 小Y和地铁]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CQOI2018-解锁屏幕"><span class="toc-number">3.</span> <span class="toc-text">[CQOI2018]解锁屏幕</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CF449D-Jzzhu-and-Numbers"><span class="toc-number">4.</span> <span class="toc-text">CF449D Jzzhu and Numbers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SDOI2009-学校食堂"><span class="toc-number">5.</span> <span class="toc-text">[SDOI2009]学校食堂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HNOI2010-公交线路"><span class="toc-number">6.</span> <span class="toc-text">[HNOI2010]公交线路</span></a></li></ol>
 </li></div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -597,7 +613,7 @@
 setInterval("createtime()",250);
 </script>
 <i class="fas fa-chart-area"></i>
-<span class="post-count">字数统计：75.3k</span>
+<span class="post-count">字数统计：75.7k</span>
 
     </div>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
